@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Contains awe_page.module..
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+/**
+ * Implements hook_help().
+ */
+function awe_page_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the awe_page module.
+    case 'help.page.awe_page':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Create Page with drag and drop.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function awe_page_theme_suggestions_page_alter(&$suggestions, $variables) {
+  if ($pid = \Drupal::routeMatch()->getRouteObject()->getOption('_awe_page')) {
+    $suggestions[] = 'page__awe_page';
+    $suggestions[] = 'page__awe_page__'.$pid;
+  }
+
+  $post = \Drupal::request()->query->all();
+  if (isset($post['pid']) && is_numeric($post['pid'])) {
+    $suggestions[] = 'page__awe_page__'.$post['pid'];
+  }
+}
+
+/**
+ * Implement hook_preprocess_page().
+ * @param $vars
+ */
+function awe_page_preprocess_page(&$vars) {
+
+  if ($pid = \Drupal::routeMatch()->getRouteObject()->getOption('_awe_page')) {
+    $vars['awe_builder'] = TRUE;
+    $vars['awe_page'] = TRUE;
+    $page = \Drupal::service('awe_page.manager');
+    $awe_page = $page->selectAwePage($pid);
+    $settings = unserialize($awe_page['settings']);
+    foreach ($settings['region'] as $region => $status) {
+      if ($status === 0 && $region != 'content') {
+        unset($vars['page'][$region]);
+      }
+    }
+  }
+
+  $post = \Drupal::request()->query->all();
+  if (isset($post['regions'])) {
+    $page_regions = Element::children($vars['page']);
+    foreach ($page_regions as $region) {
+      if (!isset($post['regions'][$region]) && $region != 'content') {
+        unset($vars['page'][$region]);
+      }
+    }
+    $vars['#cache']['contexts'][] = 'url.query_args';
+  }
+
+}
+
+/**
+ * Implements hook_theme().
+ */
+function awe_page_theme() {
+  return [
+    'awepage_edit_form' => [
+      'render element' => 'form',
+    ]
+  ];
+}

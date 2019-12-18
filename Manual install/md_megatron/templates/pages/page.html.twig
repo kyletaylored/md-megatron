@@ -1,0 +1,41 @@
+<div id="page-wrapper">
+	{% if page.header %}
+		<div class="page-content">
+			{{ page.header }}
+		</div>
+	{% endif %}
+	<div id="page-body" class="page-body mt-5 mb-5">
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					{% if page.sidebar %}
+						<div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+							{{ page.content }}
+						</div>
+						<div class="archive-sidebar side-bar col-lg-4 col-md-3 hidden-sm hidden-xs">
+							<div class="sidebar">
+								{{ page.sidebar}}
+							</div>
+						</div>		
+					{% else %}
+						<div class="col-sm-12">
+							{{ page.content }}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if page.footer %}
+		{{ page.footer }}
+	{% endif %}
+	<button id="back-to-top-btn"><i class="icon-up-open-big"></i></button>
+</div>
+<div id="modal-box" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal">&#215;</button>
+			{{ search_block }}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="layout-node-form clearfix">
+  <div class="layout-region layout-region-node-main">
+    {{ form|without('tab_regions', 'tab_font', 'tab_menu', 'tab_access', 'tab_publishing', 'submit') }}
+  </div>
+  <div class="layout-region layout-region-node-secondary entity-meta">
+    {{ form.tab_regions }}
+    {{ form.tab_font }}
+    {{ form.tab_menu }}
+    {{ form.tab_access }}
+    {{ form.tab_publishing }}
+  </div>
+  <div class="layout-region layout-region-node-footer">
+    {{ form.submit }}
+  </div>
+</div>

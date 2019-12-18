@@ -1,0 +1,5 @@
+name: AWE Megatron BlockQuote
+type: module
+description: AWE Megatron BlockQuote - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

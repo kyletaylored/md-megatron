@@ -1,0 +1,53 @@
+.form-item label {
+	margin-bottom: 7px;
+}
+#edit-background .form-item {
+	margin-bottom: 25px;
+}
+#edit-heading-1, #edit-heading-2,
+#edit-heading-3, #edit-heading-4,
+#edit-heading-5, #edit-heading-6,
+#edit-headings, #edit-font,
+#edit-hyperlinks, #edit-link-normal,
+#edit-link-hover, #edit-link-visited,
+#edit-link-active, #edit-base {
+	float: left;
+	width: 100%;
+	margin-bottom: 0;
+}
+#edit-headings .details-wrapper, #edit-font .details-wrapper,
+#edit-hyperlinks .details-wrapper {
+	float: left;
+	width: 100%;
+}
+#edit-heading-1 .js-form-item.form-item,
+#edit-heading-2 .js-form-item.form-item,
+#edit-heading-3 .js-form-item.form-item,
+#edit-heading-4 .js-form-item.form-item,
+#edit-heading-5 .js-form-item.form-item,
+#edit-heading-6 .js-form-item.form-item,
+#edit-link-normal .js-form-item.form-item,
+#edit-link-hover .js-form-item.form-item,
+#edit-link-visited .js-form-item.form-item,
+#edit-link-active .js-form-item.form-item,
+#edit-base .js-form-item.form-item {
+	float: left;
+	margin-right: 20px;
+}
+#edit-h1-fontsize, #edit-h2-fontsize,
+#edit-h3-fontsize, #edit-h4-fontsize,
+#edit-h5-fontsize, #edit-h6-fontsize,
+#edit-h1-fontweight, #edit-h2-fontweight,
+#edit-h3-fontweight, #edit-h4-fontweight,
+#edit-h5-fontweight, #edit-h6-fontweight,
+#edit-link-normal-fontweight,
+#edit-link-hover-fontweight,
+#edit-link-visited-fontweight,
+#edit-link-active-fontweight,
+#edit-base-fontsize, #edit-base-fontweight {
+    width: 50px;
+}
+#edit-font ul {
+	margin-left: 0;
+	padding-left: 17px;
+}

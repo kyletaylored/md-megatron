@@ -1,0 +1,13 @@
+{% if main["style"] == "order-list" or main["style"] == "order-list-2" %}
+	<ol class="list {{ main["style"] }}">
+		{% for value in main['list_value'] %}
+			<li><span class="bullet"></span>{{ value["label"] }}</li>
+		{% endfor %}
+	</ol>
+{% else %}
+	<ul class="list {{ main["style"] }}">
+		{% for value in main['list_value'] %}
+			<li><span class="bullet"></span>{{ value["label"] }}</li>
+		{% endfor %}
+	</ul>
+{% endif %}

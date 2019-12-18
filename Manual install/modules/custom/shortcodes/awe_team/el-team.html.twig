@@ -1,0 +1,58 @@
+{% if main["style"] == "style-1" %}
+	<div class="team-item block-team-2 team-1 {{ main["style"] }}">
+		<div class="__image">
+			<img src="{% if image["file"]["url"] %} {{ image["file"]["url"] }} {% else %} {{ 'http://placehold.it/600x600' }} {% endif %}" alt="image" class="ac-image-thumb" />
+		</div>
+		<div class="__block">
+			<div class="__name team-title">{{ main['title']|raw }}</div>
+			<div class="__role team-position">{{ main['position']|raw }}</div>
+		</div>
+	</div>
+{% elseif main["style"] == "style-2" %}
+	<div class="team-item team-2 block-team-2 {{ main["style"] }}">
+		<div class="__image">
+			<img src="{% if image["file"]["url"] %} {{ image["file"]["url"] }} {% else %} {{ 'http://placehold.it/600x600' }} {% endif %}" alt="image" class="ac-image-thumb" />
+			<ul class="social circle social-list">
+				{% for value in main['team_social_list_value'] %}
+					<li><a href="{{ value["label"] }}"><i class="team-icon {{ value["choose_icon"] }}"></i></a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="__block">
+			<div class="__name team-title">{{ main['title']|raw }}</div>
+			<div class="__role team-position">{{ main['position']|raw }}</div>
+		</div>
+	</div>
+{% elseif main["style"] == "style-3" %}
+	<div class="team-item team-3 block-team {{ main["style"] }}">
+		<div class="__image">
+			<img src="{% if image["file"]["url"] %} {{ image["file"]["url"] }} {% else %} {{ 'http://placehold.it/600x600' }} {% endif %}" alt="team member" class="ac-image-thumb" />
+		</div>
+		<div class="__info">
+			<h4 class="__name team-title">{{ main['title']|raw }}</h4>
+			<p class="__role font-serif-italic team-position">{{ main['position']|raw }}</p>
+			<p class="__text team-desc">{{ main['description']|raw }}</p>
+			<ul class="social circle primary social-list">
+				{% for value in main['team_social_list_value'] %}
+					<li><a href="{{ value["label"] }}"><i class="team-icon {{ value["choose_icon"] }}"></i></a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% elseif main["style"] == "style-4" %}
+	<div class="team-item team-4 block-team team-horizontal {{ main["style"] }}">
+		<div class="__image">
+			<img src="{% if image["file"]["url"] %} {{ image["file"]["url"] }} {% else %} {{ 'http://placehold.it/600x600' }} {% endif %}" alt="team member" class="ac-image-thumb" />
+		</div>
+		<div class="__info">
+			<h4 class="__name team-title">{{ main['title']|raw }}</h4>
+			<p class="__role font-serif-italic team-position">{{ main['position']|raw }}</p>
+			<p class="__text team-desc">{{ main['description']|raw }}</p>
+			<ul class="social circle primary social-list">
+				{% for value in main['team_social_list_value'] %}
+					<li><a href="{{ value["label"] }}"><i class="team-icon {{ value["choose_icon"] }}"></i></a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endif %}

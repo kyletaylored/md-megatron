@@ -1,0 +1,8 @@
+name: Main Nav Left Block
+description: Main Nav Left Block.
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

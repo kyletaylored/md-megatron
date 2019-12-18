@@ -1,0 +1,17 @@
+name: MD Megatron Hospital
+type: theme
+base theme: md_megatron
+Description: "Megatron Hospital - Multipurpose Drupal Theme"
+package: custom
+core: 8.x
+version: 8.x-1.0
+
+libraries: 
+- md_megatron_hospital/global-styling
+
+regions:
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+  disabled: Disabled  

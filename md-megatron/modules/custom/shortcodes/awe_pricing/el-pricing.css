@@ -1,0 +1,98 @@
+ul, ol {
+	margin-left: 0;
+}
+.price-table-item .__body {
+    border: 1px solid #DDDDDD;
+    padding: 0 15px 60px;
+}
+.price-table-item .__title {
+    background-color: #444444;
+    padding: 25px 15px;
+}
+.price-table-item .__title.false,
+.price-table-item .service-box.false,
+.price-table-item .price.false,
+.price-table-item .feature-list.false,
+.price-table-item .ts-button.false {
+	display: none;
+}
+.price-table-item .__body ul li {
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 0;
+    padding: 28px 0;
+    color: #666666;
+	font-family: "Montserrat", sans-serif;
+}
+.price-table-item .__body ul li b {
+    color: #444444;
+    font-weight: 700;
+}
+.price-table-item .__body h1 {
+    font-weight: 400;
+    margin-bottom: 0;
+    padding-top: 45px;
+}
+.price-table-item .__body .service-box {
+    border-bottom: 1px solid #DDDDDD;
+    padding-top: 40px;
+    padding-bottom: 35px;
+}
+.price-table-item .__body .service-box i {
+    font-size: 32px;
+    display: inline-block;
+    margin-bottom: 22px;
+}
+.price-table-item .__body .service-box h4 {
+    margin-bottom: 10px;
+}
+.price-table-item .__body .ts-button {
+    margin-top: 45px;
+}
+.price-table-item .__body {
+	padding-left: 0;
+	padding-right: 0;
+}
+.price-table-item .__body .service-box,
+.feature-list {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.price-table-item .__body .price > span {
+	display: inline-block;
+	margin: 0 -10px;
+}
+.price-table-item .__body .price.style-1 > span {
+	font-weight: 700;
+}
+.price-table-item .__body .price.style-1 > .price-duration {
+	display: none;
+}
+.price-table-item .__body .price.style-2 > .price-currency {
+	font-size: 50%;
+}
+.price-table-item .__body .price.style-2 > .price-value {
+	font-weight: 700;
+}
+.price-table-item .__body .price.style-2 > .price-duration {
+	display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 35%;
+}
+.price-table-item .__body .price.style-3 > .price-value,
+.price-table-item .__body .price.style-3 > .price-currency {
+	font-weight: 700;
+}
+.price-table-item .__body .price.style-3 > .price-duration {
+	font-size: 50%;
+}
+.price-table-item .__body .price.style-4 > .price-value,
+.price-table-item .__body .price.style-4 > .price-currency {
+	font-weight: 700;
+}
+.price-table-item .__body .price.style-4 > .price-duration {
+	display: block;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 35%;
+}

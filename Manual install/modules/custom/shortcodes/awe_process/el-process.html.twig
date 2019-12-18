@@ -1,0 +1,26 @@
+{% if main["style"] == "style-1" %}
+	<div class="block-process process-item process-1 {{ main["style"] }}">
+		<h6 class="__title process-title">{{ main['title']|raw }}</h6>
+		<div class="__icon">
+			{% if line["line_enable"] %}
+				<div class="line true"></div>
+			{% endif %}
+			<div class="circle-icon process-icon">
+				<i class="{{icon["icon"] }}"></i>
+			</div>
+		</div>
+		<p class="__content process-desc">{{ main['description']|raw }}</p>
+	</div>
+{% elseif main["style"] == "style-2" %}
+	<div class="block-process-2 process-item process-2 {{ main["style"] }}">
+		<span class="__number font-heading number">{{ number['number'] }}</span>
+		<div class="cell-vertical-wrapper">
+			<div class="cell-middle">
+				<div class="__block">
+					<div class="__title font-heading process-title">{{ main['title']|raw }}</div>
+					<p class="__content process-desc">{{ main['description']|raw }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}

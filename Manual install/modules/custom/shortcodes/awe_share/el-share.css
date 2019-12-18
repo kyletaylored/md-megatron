@@ -1,0 +1,25 @@
+.share-item {
+	display: none;
+}
+.share-1.style-1,
+.share-2.style-2 {
+	display: block;
+}
+@media (min-width : 900px) {
+	.__4-modules > div {
+		float: left;
+		width: 25%;
+	}
+	.__3-modules > div {
+		float: left;
+		width: 33.33333%;
+	}
+	.__2-modules > div {
+		float: left;
+		width: 50%;
+	}
+	.__1-modules > div {
+		float: left;
+		width: 100%;
+	}
+}

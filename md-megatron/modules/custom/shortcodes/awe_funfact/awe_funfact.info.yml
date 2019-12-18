@@ -1,0 +1,5 @@
+name: AWE Megatron Funfact
+type: module
+description: AWE Megatron Funfact - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

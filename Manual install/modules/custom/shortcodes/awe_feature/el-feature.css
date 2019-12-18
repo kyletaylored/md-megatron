@@ -1,0 +1,69 @@
+.feature-item {
+	display: none;
+}
+.feature-1.style-1,
+.feature-2.style-2,
+.feature-7.style-7,
+.feature-8.style-8 {
+	display: block;
+}
+.feature-3.style-3,
+.feature-4.style-4,
+.feature-5.style-5,
+.feature-6.style-6 {
+	display: flex;
+}
+.feature-6.style-6 {
+	position: relative;
+}
+.feature-item.feature-1 .__header {
+    display: table;
+}
+.feature-item.feature-1 .__header .__icon {
+    display: table-cell;
+	position: relative;
+	border-radius: 50%;
+}
+.feature-item.feature-1 .__header .__heading {
+    display: table-cell;
+	padding-left: 10px;
+}
+.feature-item.group-icon-list.process-style .__icon:after {
+	display: none;
+}
+.feature-item.group-icon-list.process-style .__icon > .vline {
+	position: absolute;
+    width: 0;
+    height: 100%;
+    border-right: 1px dashed #00B863;
+    left: 50%;
+    z-index: -1;
+}
+.feature-item.feature-4 .feature-icon {
+    float: left;
+	background: none;
+}
+.feature-item.feature-3 .feature-icon,
+.feature-item.feature-6 .feature-icon {
+    max-height: 70px;
+}
+.feature-6.group-icon-list.process-style .__icon {
+	max-width: 70px;
+}
+.feature-6 .vline {
+	position: absolute;
+    width: 0;
+    height: 100%;
+    border-right: 1px dashed #00B863;
+    left: 35px;
+    z-index: -1;
+}
+.circle-icon {
+	position: relative;
+}
+.feature-icon {
+	background-color: #00B863;
+}
+/*.feature-item.feature-2 .feature-icon {
+	background-color: transparent;
+}*/

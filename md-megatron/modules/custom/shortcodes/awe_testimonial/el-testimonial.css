@@ -1,0 +1,11 @@
+.testi-item {
+	display: none;
+}
+.quote-1.style-1,
+.quote-2.style-2,
+.quote-3.style-3,
+.quote-4.style-4,
+.quote-5.style-5,
+.quote-6.style-6 {
+	display: block;
+}

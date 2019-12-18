@@ -1,0 +1,26 @@
+awe_page.admin:
+  route_name: awe_page.admin
+  base_route: awe_page.admin
+  title: Pages
+awe_page.admin.add:
+  route_name: awe_page.admin.add
+  base_route: awe_page.admin
+  title: Add
+awe_page.admin.import:
+  route_name: awe_page.admin.import
+  base_route: awe_page.admin
+  title: Import
+awe_page.admin.edit:
+  route_name: awe_page.admin.edit
+  base_route: awe_page.admin.edit
+  title: Edit
+awe_page.admin.delete:
+  route_name: awe_page.admin.delete
+  base_route: awe_page.admin.edit
+  title: Delete
+awe_page.admin.clone:
+  route_name: awe_page.admin.clone
+  base_route: awe_page.admin.edit
+  title: Clone
+awe_page:
+  deriver: 'Drupal\awe_page\Plugin\Derivative\AwePageLocalTasks'

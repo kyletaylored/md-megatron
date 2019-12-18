@@ -1,0 +1,8 @@
+name: Main Nav 3 Block
+description: Main Nav 3 Block.
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

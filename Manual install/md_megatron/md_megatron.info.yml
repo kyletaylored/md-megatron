@@ -1,0 +1,17 @@
+name: MD Megatron 
+type: theme
+base theme: classy
+Description: "Megatron - Multipurpose Drupal Theme"
+package: custom
+core: 8.x
+version: 8.x-1.0
+
+libraries: 
+- md_megatron/global-styling
+
+regions:
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+  disabled: Disabled  

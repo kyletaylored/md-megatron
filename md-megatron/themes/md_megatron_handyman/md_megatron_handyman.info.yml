@@ -1,0 +1,17 @@
+name: MD Megatron HandyMan
+type: theme
+base theme: md_megatron
+Description: "Megatron HandyMan - Multipurpose Drupal Theme"
+package: custom
+core: 8.x
+version: 8.x-1.0
+
+libraries: 
+- md_megatron_handyman/global-styling
+
+regions:
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+  disabled: Disabled  

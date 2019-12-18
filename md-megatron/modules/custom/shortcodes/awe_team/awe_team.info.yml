@@ -1,0 +1,5 @@
+name: AWE Megatron Team
+type: module
+description: AWE Megatron Team - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

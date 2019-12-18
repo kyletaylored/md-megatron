@@ -1,0 +1,4 @@
+awe_page.builder.edit:
+  title: 'Edit AwePage'
+  route_name: awe_page.admin.edit
+  group: awe_page

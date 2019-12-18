@@ -1,0 +1,5 @@
+awe_page.admin.add:
+  route_name: awe_page.admin.add
+  title: 'Add page'
+  appears_on:
+    - awe_page.admin

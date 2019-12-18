@@ -1,0 +1,8 @@
+name: Display Title Block
+description: Display Title Block.
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

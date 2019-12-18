@@ -1,0 +1,33 @@
+<div class="post post-index">
+	<div class="__header">
+		{% if fields.field_news_style.content == 'image' %}
+			<img src="{{ fields.field_news_thumbnail.content }}" alt="{{ fields.title.content }}" class="img-responsive"/>
+		{% elseif fields.field_news_style.content == 'multi' %}
+			{{ fields.field_news_multimedia.content }}
+		{% elseif fields.field_news_style.content == 'slider' %}
+			<div class="slider slide direction-nav">
+				{% set images = fields.field_news_image.content | split('|') %}
+				{% for value in images %}
+					<img src="{{ value }}" alt="" />
+				{% endfor %}
+			</div>
+		{% else %}
+			<div class="__quote clearfix bgc-secondary">
+			  <div class="__qcontent">{{ fields.body.content }}</div>
+			  <div class="__qauthor pull-right">{{ fields.field_news_quote_title.content }}</div>
+			</div>
+		{% endif %}
+	</div>
+	{% if fields.field_news_style.content != 'quote' %}
+		<div class="__main">
+			<div class="__title"><a href="{{ fields.path.content }}">{{ fields.title.content }}</a></div>
+			<div class="__meta">
+				<span>{% trans %}Posted{% endtrans %}:&nbsp;<span class="__value">{{ fields.created.content }} </span></span><span>{% trans %}By{% endtrans %}:&nbsp;<span class="__value">{{ fields.uid.content }}</span></span><span>{% trans %}Categories{% endtrans %}:&nbsp;<span class="__value">{{ fields.field_news_categories.content }}</span></span><span>{% trans %}Comment{% endtrans %}:&nbsp;<span class="__value">{% if node.comment.comment_count %} {{ node.comment.comment_count }} {% else %} 0 {% endif %}</span></span>
+			</div>
+			<div class="__content">{{ fields.body.content }}</div>
+			<div class="post-index-group-button">
+				<a href="{{ fields.path.content }}" class="btn btn-primary">{% trans %}READ MORE{% endtrans %}</a>
+			</div>
+		</div>
+	{% endif %}
+</div>

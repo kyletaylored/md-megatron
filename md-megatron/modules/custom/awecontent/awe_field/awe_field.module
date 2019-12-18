@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains awe_field.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function awe_field_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the awe_field module.
+    case 'help.page.awe_field':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Drupal field use AweContent') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function awe_field_preprocess_page(&$vars) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', $node->bundle());
+    foreach ($definitions as $field_name => $field) {
+      if ($field->getType() == 'field_awe_builder') {
+        $vars['awe_builder'] = TRUE;
+        $vars['awe_field'] = TRUE;
+      }
+    }
+  }
+}

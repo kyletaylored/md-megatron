@@ -1,0 +1,8 @@
+name: Main Nav Mobile Block
+description: Main Nav Mobile Block.
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

@@ -1,0 +1,15 @@
+{% set style = fields.field_portfolio_style.content %}
+
+<div class="grid-item {{  style == 'style-1' ? 'col-md-8 col-sm-12' : 'col-md-4 col-sm-6' }}">
+	<div class="block-portfolio overlay-container basic">
+		<img src="{{ fields.field_portfolio_thumbnail.content }}" alt="{{ fields.title.content }}" class="__image"/>
+		<div class="overlay bgc-dark-o-7">
+			<div class="cell-vertical-wrapper">
+				<div class="cell-middle">
+					<h4 class="__title"><a href="{{ fields.path.content }}">{{ fields.title.content }}</a></h4>
+					<div class="__caption font-serif-italic">{{ fields.body.content }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

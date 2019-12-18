@@ -1,0 +1,13 @@
+name: MD Megatron Fitness
+type: profile
+description: 'Select this profile to install demo profile for MD Megatron Fitness theme.'
+exclusive: 1
+dependencies:
+  - node
+  - contact
+themes:
+  - bartik
+
+version: '8.6.1'
+core: '8.x'
+project: 'drupal'

@@ -1,0 +1,52 @@
+.list {
+	display: none;
+}
+.list li {
+	margin-bottom: 10px;
+}
+ol.list.order-list,
+ol.list.order-list-2 {
+	display: block;
+}
+ul.list.list-disc,
+ul.list.list-square,
+ul.list.list-arrow {
+	display: block;
+}
+ol.list li > span {
+	margin-right: 8px;
+}
+ol.list li > span:before {
+    font-family: "Montserrat", sans-serif;
+    content: counter(ol-counter) ".";
+    counter-increment: ol-counter;
+    font-size: 90%;
+}
+ol.list li > span {
+	width: 30px;
+    height: 30px;
+    line-height: 30px;
+	text-align: center;
+    display: inline-block;
+}
+ol.list.order-list-2 li > span {
+	border-radius: 50%;
+	background-color: #00B863;
+}
+ol.list.order-list-2 li > span:before {
+	display: inline-block;
+    content: counter(ol-counter);
+}
+ul.list li > span {
+	font-family: "Raleway", sans-serif;
+    margin-right: 8px;
+}
+ul.list-disc li > span:before {
+    content: "\25CF";
+}
+ul.list-square li > span:before {
+  content: "\25A0";
+}
+ul.list-arrow li > span:before {
+  content: "\276F";
+}

@@ -1,0 +1,5 @@
+name: AWE Megatron Social Sharing
+type: module
+description: AWE Megatron Social Sharing - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

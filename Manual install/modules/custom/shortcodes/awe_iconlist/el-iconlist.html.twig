@@ -1,0 +1,5 @@
+<ul class="list-icon">
+	{% for value in main['icon_list_value'] %}
+		<li><i class="il-icon {{ value["choose_icon"] }}"></i>{{ value["label"] }}</li>
+	{% endfor %}
+</ul>

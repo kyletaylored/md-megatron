@@ -1,0 +1,22 @@
+.blockquote-item {
+	border-left: none;
+}
+.blockquote-item {
+	display: none;
+}
+blockquote.blockquote-item.style-1,
+p.blockquote-item.style-2,
+q.blockquote-item.style-2 {
+	display: block;
+}
+p.blockquote-item {
+    quotes: '\201C ' ' \201D';
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+p.blockquote-item::before {
+    content: open-quote;
+}
+p.blockquote-item::after {
+    content: close-quote;
+}

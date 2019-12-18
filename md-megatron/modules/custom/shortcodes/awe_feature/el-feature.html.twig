@@ -1,0 +1,80 @@
+{% if main["style"] == "style-1" %}
+	<div class="block-icon-box feature-item feature-1 {{ main["style"] }}">
+		<div class="__header clearfix">
+			<div class="__icon circle-icon feature-icon">
+				<i class="{{icon["icon"] }}"></i>
+			</div>
+			<h6 class="nmb __heading feature-title">{{ main['title']|raw }}</h6>
+		</div>
+		<div class="__content feature-desc">{{ main['description']|raw }}</div>
+	</div>
+{% elseif main["style"] == "style-2" %}
+	<div class="block-icon-box-vertical feature-item feature-2 {{ main["style"] }}">
+		<div class="__icon circle-icon feature-icon">
+			<i class="{{icon["icon"] }}"></i>
+		</div>
+		<h4 class="__heading smb feature-title">{{ main['title']|raw }}</h4>
+		<div class="__content feature-desc">{{ main['description']|raw }}</div>
+	</div>
+{% elseif main["style"] == "style-3" %}
+	<div class="block-icon-box-left-icon feature-item feature-3 {{ main["style"] }}">
+		<div class="__icon circle-icon feature-icon">
+			<i class="{{icon["icon"] }}"></i>
+		</div>
+		<div class="__right-side">
+			<h4 class="__heading smb feature-title">{{ main['title']|raw }}</h4>
+			<div class="__content feature-desc">{{ main['description']|raw }}</div>
+		</div>
+	</div>
+{% elseif main["style"] == "style-4" %}
+	<div class="block-icon-box-left-icon group-icon-list process-style feature-item feature-4 {{ main["style"] }}">
+		<div class="__icon simple-icon">
+			<i class="feature-icon {{icon["icon"] }}"></i>
+			<span class="vline"></span>
+		</div>
+		<div class="__right-side">
+			<h6 class="__heading smb feature-title">{{ main['title']|raw }}</h6>
+			<div class="__content feature-desc">{{ main['description']|raw }}</div>
+		</div>
+	</div>
+{% elseif main["style"] == "style-5" %}
+	<div class="block-icon-box-left-icon feature-item feature-5 {{ main["style"] }}">
+		<div class="__icon simple-icon">
+			<i class="feature-icon {{icon["icon"] }}"></i>
+		</div>
+		<div class="__right-side">
+			<h6 class="__heading smb feature-title">{{ main['title']|raw }}</h6>
+			<div class="__content feature-desc">{{ main['description']|raw }}</div>
+		</div>
+	</div>
+{% elseif main["style"] == "style-6" %}
+	<div class="block-icon-box-left-icon group-icon-list process-style feature-item feature-6 {{ main["style"] }}">
+		<div class="__icon circle-icon feature-icon">
+			<i class="{{icon["icon"] }}"></i>
+		</div>
+		<div class="__right-side">
+			<h6 class="__heading smb feature-title">{{ main['title']|raw }}</h6>
+			<div class="__content feature-desc">{{ main['description']|raw }}</div>
+		</div>
+		<span class="vline"></span>
+	</div>
+{% elseif main["style"] == "style-7" %}
+	<div class="block-icon-box-vertical feature-item feature-7 {{ main["style"] }}">
+		<div class="__icon simple-icon">
+			<i class="feature-icon {{icon["icon"] }}"></i>
+		</div>
+		<h4 class="__heading smb feature-title">{{ main['title']|raw }}</h4>
+		<div class="__caption font-serif italic feature-subtitle">{{ main['subtitle']|raw }}</div>
+		<div class="__content feature-desc">{{ main['description']|raw }}</div>
+	</div>
+{% elseif main["style"] == "style-8" %}
+	<div class="block-icon-box feature-item feature-8 {{ main["style"] }}">
+		<div class="__header clearfix">
+			<div class="__icon simple-icon">
+				<i class="feature-icon {{icon["icon"] }}"></i>
+			</div>
+			<h6 class="nmb __heading feature-title">{{ main['title']|raw }}</h6>
+		</div>
+		<div class="__content feature-desc">{{ main['description']|raw }}</div>
+	</div>
+{% endif %}

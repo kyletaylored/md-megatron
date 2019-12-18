@@ -1,0 +1,26 @@
+{% set classes = ['ac-counter'] %}
+
+<div {{ attributes.addClass(classes) }}>
+		{% for value in main['order_counter'] %}
+			{% if value == "order_icon" %}
+				{% if main['icon_enable'] %}
+					<i class="ac-icon {{ main["icon_option"]["choose_icon"] }}" style="color: {{ main['icon_option']['icon_color'] }}; font-size: {{ main['icon_option']['icon_size'] }}"></i>
+				{% endif %}
+			{% endif %}
+			{%  if value == "order_number" %}
+				<div class="timer counter-value" data-from="0" data-to="{{ main['counter_number'] }}" data-speed="100">
+					<span>{{ main['counter_number'] }}</span>
+				</div>
+			{% endif %}
+			{%  if value == "order_title" %}
+				{%  if main['enable_title'] %}
+					<div class="counter-title">{{ main['counter_title']|raw }}</div>
+				{% endif %}
+			{% endif %}
+			{%  if value == "order_line" %}
+				{%  if main['enable_line'] %}
+					<span class="counter-line"></span>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+</div>

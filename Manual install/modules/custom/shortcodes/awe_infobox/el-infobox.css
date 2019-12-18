@@ -1,0 +1,26 @@
+.awe-cover-box {
+	width: 100%;
+}
+.awe-cover-box .block-interactive-banner {
+	width: 50%;
+    display: inline-block;
+    float: left;
+    padding-right: 3%;
+}
+.awe-cover-box .overlay-container {
+	overflow: hidden;
+}
+.awe-cover-box .cover-box-content {
+	position: static !important;
+	width: auto;
+	display: inline-block;
+}
+.info-item {
+	display: none;
+}
+.info-1.style-1,
+.info-2.style-2,
+.info-3.style-3,
+.info-4.style-4 {
+	display: block;
+}

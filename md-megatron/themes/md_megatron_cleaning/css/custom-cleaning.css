@@ -1,0 +1,96 @@
+ul li, ol li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+}
+textarea.form-control:focus {
+	border-color: #81c708 !important;
+}
+.modal .modal-content .close,
+.modal .search-form .form-actions .form-submit {
+	background-color: #81c708;
+}
+.menu-item-hightlight-bottom {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.menu-item-hightlight-bottom ul.root > li > a {
+	position: relative;
+}
+.menu-item-hightlight-bottom ul.root > li > a:after {
+    transition: all 0.3s ease-in-out;
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: transparent;
+    bottom: -1px;
+    left: 0;
+}
+.menu-item-hightlight-bottom ul.root > li > a:hover:after, 
+.menu-item-hightlight-bottom ul.root > li > a:focus:after {
+    background-color: #81c708;
+}
+.modal-dialog .fivestar-average-stars .description, 
+.shop-detail .fivestar-average-stars .description,
+.table-compare .td-compare .product_review .review_star {
+	color: #444444;
+}
+.modal-dialog .commerce-add-to-cart .submit-wrapper, 
+.shop-detail .commerce-add-to-cart .submit-wrapper,
+.table-compare .td-compare .compare-action .commerce-add-to-cart .form-submit,
+table.shop_table.cart.wishlist_table .product-add-to-cart .form-submit {
+	background-color: #222222;
+}
+.modal-dialog .commerce-add-to-cart .submit-wrapper:hover, 
+.shop-detail .commerce-add-to-cart .submit-wrapper:hover,
+.table-compare .td-compare .compare-action .commerce-add-to-cart .form-submit:hover,
+table.shop_table.cart.wishlist_table .product-add-to-cart .form-submit:hover {
+    background-color: #81c708;
+}
+.social.circle.secondary li a {
+	background-color: #81c708;
+}
+.social.circle li a {
+	padding-top: 0;
+}
+.tabs .tabs-nav > ul li.active {
+	border-top-color: #81c708;
+}
+.tabs.full .tabs-nav > ul li.active {
+	background-color: #fff;
+}
+.table-compare .td-compare .price,
+.__cart.dropdown .line-item-total-raw,
+.line-item-summary .line-item-total span {
+	color: #81c708;
+}
+#block-md-megatron-cleaning-page-title {
+	display: none;
+}
+.ac-image {
+	margin-bottom: 0;
+}
+.modal #search-block-form .form-actions .form-submit {
+	background-color: #81c708;
+}
+.price-table-item .__title.default {
+    background-color: #81c708;
+}
+.webform-button--submit {
+	transition: all 0.3s ease-in-out;
+    font-family: "Montserrat", sans-serif;
+    display: inline-block;
+    padding: 16.5px 30px;
+    line-height: 1.2;
+    font-size: 13px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #222222;
+    border: 0;
+    background-color: #81c708;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    padding: 18.5px 39px;
+	margin-left: 16px !important;
+    text-transform: uppercase;
+}

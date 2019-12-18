@@ -1,0 +1,5 @@
+name: AWE Megatron Testimonial
+type: module
+description: AWE Megatron Testimonial - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

@@ -1,0 +1,5 @@
+name: AWE Megatron Pricing
+type: module
+description: AWE Megatron Pricing - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

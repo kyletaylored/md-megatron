@@ -1,0 +1,16 @@
+awe_field.admin:
+  # Add css file
+  css:
+    component:
+      assets/css/awefield_admin.css: {}
+      assets/css/awefield_build_fix.css: {}
+  # Add js files
+  header: true
+  js:
+    assets/js/awefield_admin.js: {}
+  dependencies:
+    - awe_builder/awe_builder.admin
+#awe_field.front:
+#  css:
+#    theme:
+#  js:

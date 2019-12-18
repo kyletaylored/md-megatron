@@ -1,0 +1,5 @@
+name: AWE Megatron Service
+type: module
+description: AWE Megatron Service - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

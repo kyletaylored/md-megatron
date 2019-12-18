@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains awe_builder.module..
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Component\Serialization\Json;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+
+
+/**
+ * Implements hook_theme().
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ * @return array
+ */
+function awe_infobox_theme($existing, $type, $theme, $path) {
+  $theme = [];
+
+  $theme['el_infobox'] = [
+    'path' => $path,
+    'variables' => [
+      'el_settings' => [],
+      'el_extra_data' => [],
+      'el_animation' => [],
+      'el_wrap_class' => '',
+    ]
+  ];
+
+  return $theme;
+}
+
+function awe_infobox_preprocess_el_infobox(&$vars) {
+  _awebuilder_set_all_part_to_variable($vars);
+}

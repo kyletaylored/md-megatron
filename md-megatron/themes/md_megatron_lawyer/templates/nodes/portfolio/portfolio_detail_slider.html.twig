@@ -1,0 +1,88 @@
+<div class="row">
+	<div class="col-xs-12 pt-55 pb-80">
+		<div class="portfolio-box-slider">
+			<div class="slider slide direction-nav">
+				{% for item in node.field_portfolio_gallery %}
+					<div class="block-portfolio-box-slider">
+						<div class="__image">
+							<img src="{{ file_url(item.getFieldCollectionItem().field_portfolio_gallery_image.entity.getFileUri()) }}" alt="{{ item.getFieldCollectionItem().field_portfolio_gallery_title.value }}"/>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row portfolio-single-detail pb-40">
+	<div class="col-lg-9 col-md-8 col-xs-12 portfolio-single-content pb-30">
+		<h3 class="fz-3-l">{{ node.title.entity.getTitle() }}</h3>
+		{{ node.body.value | raw }}
+		<ul class="social circle secondary responsive">
+			<li>
+				<a onclick="window.open('https://www.facebook.com/sharer.php?s=100&amp;p[url]={{ path('entity.node.canonical', {'node': node.id}) }}','sharer', 'toolbar=0,status=0,width=620,height=280');" href="javascript:;">
+					<i class="fa icon icon-facebook-1"></i>
+				</a>
+			</li>
+			<li>
+				<a target="_blank" href="http://twitter.com/home?status={{ node.title.entity.getTitle() }} {{ path('entity.node.canonical', {'node': node.id}) }}">
+					<i class="fa icon icon-twitter-1"></i>
+				</a>
+			</li>
+			<li>
+				<a target="_blank" href="http://pinterest.com/pin/create/button/?url={{ path('entity.node.canonical', {'node': node.id}) }}&amp;description={{ node.title.entity.getTitle() }}">
+					<i class="icon icon-pinterest"></i>
+				</a>
+			</li>
+			<li>
+				<a href="http://linkedin.com/shareArticle?mini=true&amp;url={{ path('entity.node.canonical', {'node': node.id}) }}&amp;title={{ node.title.entity.getTitle() }}" target="_blank">
+					<i class="icon icon-linkedin"></i>
+				</a>
+			</li>
+			<li>
+				<a href="//plus.google.com/share?url={{ path('entity.node.canonical', {'node': node.id}) }}&amp;title={{ node.title.entity.getTitle() }}" target="_blank">
+					<i class="icon icon-googleplus"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="col-lg-3 col-md-4 col-xs-12 portfolio-single-info">
+		<div class="__item __client-site">
+			<h6>{% trans %} CLIENT'S SITE {% endtrans %}</h6>
+			<a href="{{ node.field_portfolio_client_site.value }}" class="color-secondary">{{ node.field_portfolio_client_site.value }}</a>
+		</div>
+		<div class="__item __client">
+			<h6>{% trans %} CLIENT {% endtrans %}</h6>
+			<span>{{ node.field_portfolio_client.value }}</span>
+		</div>
+		<div class="__item __category">
+			<h6>{% trans %} CATEGORIES {% endtrans %}</h6>
+			<div class="color-primary font-serif-italic">
+				{% set total = (node.field_portfolio_categories.getvalue | length) %}
+				{% set count = 0 %}
+				{% for item in content.field_portfolio_categories %}
+					{% if item['#title'] %}
+						{% set count = count + 1  %}
+						{% if (count < total) %}
+							<a href="{{ item['#url']}}">{{ item['#title']  }}</a>, 
+						{% else %}
+							<a href="{{ item['#url']}}">{{ item['#title']  }}</a>
+						{% endif %}	
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="__item __tag">
+			<h6>{% trans %} TAG {% endtrans %}</h6>
+			<div class="widget-tag">
+				<div class="__widget-content tags">
+					{% set total = (node.field_portfolio_tags.getvalue | length) %}
+					{% for item in content.field_portfolio_tags %}
+						{% if item['#title'] %}
+							<a href="{{ item['#url']}}">{{ item['#title']  }}</a>	
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

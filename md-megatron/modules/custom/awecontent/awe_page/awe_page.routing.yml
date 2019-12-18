@@ -1,0 +1,52 @@
+awe_page.admin:
+  path: '/admin/awecontent/page'
+  defaults:
+    _title: 'Manager AwePage'
+    _form: '\Drupal\awe_page\Form\AwePageFormManager'
+  requirements:
+    _permission: 'administer awe page'
+awe_page.admin.import:
+  path: '/admin/awecontent/page/import'
+  defaults:
+    _title: 'Import AweContent Pages'
+    _form: '\Drupal\awe_page\Form\AwePageImportForm'
+  requirements:
+    _permission: 'administer awe page'
+awe_page.admin.add:
+  path: '/admin/awecontent/page/add'
+  defaults:
+    _title: 'Add new AweContent Page'
+    _form: '\Drupal\awe_page\Form\AwePageForm'
+  requirements:
+    _awe_page_access_check: 'TRUE'
+
+awe_page.admin.edit:
+  path: '/admin/awecontent/page/edit/{pid}'
+  defaults:
+    _title: 'Edit AweContent Page'
+    _form: '\Drupal\awe_page\Form\AwePageForm'
+  requirements:
+    _awe_page_access_check: 'TRUE'
+awe_page.admin.delete:
+  path: '/admin/awecontent/page/delete/{pid}'
+  defaults:
+    _title: 'Delete AweContent Page'
+    _form: '\Drupal\awe_page\Form\AwePageDeleteForm'
+  requirements:
+    _awe_page_access_check: 'TRUE'
+awe_page.admin.clone:
+  path: '/admin/awecontent/page/clone/{pid}'
+  defaults:
+    _title: 'Clone AweContent Page'
+    _form: '\Drupal\awe_page\Form\AwePageCloneForm'
+  requirements:
+    _awe_page_access_check: 'TRUE'
+awe_page.admin.iframe:
+  path: 'awe-page/content'
+  defaults:
+    _title: 'AweContent iframe'
+    _controller: '\Drupal\awe_page\Controller\AwePageController::pageIframe'
+  requirements:
+    _permission: 'use awe builder'
+route_callbacks:
+  - '\Drupal\awe_page\Routing\AwePageRoutes::routes'

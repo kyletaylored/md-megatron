@@ -1,0 +1,18 @@
+
+/* more */
+.divider-padding-geometry{
+	padding: 2px 30px;
+	background: #337ab7;
+}
+.divider-solid .ac-divider__line-left,
+.divider-solid .ac-divider__line-right{
+  border-top-style: solid;
+}
+.divider-dotted .ac-divider__line-left,
+.divider-dotted .ac-divider__line-right{
+  border-top-style: dotted;
+}
+.divider-dashed .ac-divider__line-left,
+.divider-dashed .ac-divider__line-right{
+  border-top-style: dashed;
+}

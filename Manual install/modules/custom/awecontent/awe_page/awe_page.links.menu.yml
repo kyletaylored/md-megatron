@@ -1,0 +1,8 @@
+awe_builder.awe_page:
+  title: 'Pages'
+  description: 'Manager pages build with AweContent'
+  parent: awe_builder.admin
+  route_name: awe_page.admin
+  weight: 5
+awe_page:
+  deriver: Drupal\awe_page\Plugin\Derivative\AwePageMenuLink

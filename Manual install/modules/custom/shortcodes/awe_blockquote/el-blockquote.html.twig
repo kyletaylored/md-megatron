@@ -1,0 +1,5 @@
+{% if main["style"] == "style-1" %}
+	<blockquote class="blockquote-item {{ main["style"] }}">{{ main['description']|raw }}</blockquote>
+{% elseif main["style"] == "style-2" %}
+	<q class="blockquote-item {{ main["style"] }}">{{ main['description']|raw }}</q>
+{% endif %}

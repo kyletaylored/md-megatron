@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the standard installation profile.
+ */
+
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+use Drupal\shortcut\Entity\Shortcut;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function mdmegatron_handyman_install() {
+}
+
+/**
+* Implements hook_install_tasks_alter()
+*/
+  function mdmegatron_handyman_install_tasks_alter(&$tasks, $install_state) {
+    $tasks['install_finished']['function'] = 'mdmegatron_handyman_finished_install';
+  }
+
+  function mdmegatron_handyman_finished_install(&$install_state) {
+    # Copy files need for demo
+    $source = DRUPAL_ROOT . '/profiles/mdmegatron_handyman/files';
+    $destination = DRUPAL_ROOT . '/sites/default/files';
+    md_megatron_handyman_copy_directory($source, $destination);
+    _drupal_flush_css_js();
+  // Flush the cache of all data for the update status module.
+  //drupal_flush_all_caches();
+    
+  $success_message = t('Congratulations, you installed MD Megatron Handyman Theme.');
+  drupal_set_message($success_message);
+  }
+  /**
+    * Copy directory function
+    */
+  function md_megatron_handyman_copy_directory($source, $destination) {
+    if (!is_dir($source))
+      exit("{$source} is not a directory.");
+
+    if (!file_exists($destination))
+      mkdir($destination);
+
+    $handle = opendir($source);
+    while (FALSE !== ($file = readdir($handle))) {
+      if ($file == '.' || $file == '..')
+        continue;
+
+      $file_path = "{$source}/{$file}";
+      if (is_dir($file_path)) {
+        md_megatron_handyman_copy_directory($file_path, "{$destination}/{$file}");
+        continue;
+      }
+
+      copy($file_path, "{$destination}/{$file}");
+    }
+
+    closedir($handle);
+  }

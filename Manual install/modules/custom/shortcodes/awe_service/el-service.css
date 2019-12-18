@@ -1,0 +1,23 @@
+.service-item {
+	display: none;
+}
+.service-1.style-1,
+.service-2.style-2 {
+	display: block;
+}
+.service-item.block-interactive-banner-3 {
+	width: 100%;
+}
+.block-interactive-banner-3.show-button .__content .__block p.__text,
+.block-interactive-banner-3.show-button .__content .__block p.__sub-title, 
+.block-interactive-banner-3.show-button .__content .__block h4 {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+}
+.block-interactive-banner-3.show-button .__content .__block .__button {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}

@@ -1,0 +1,717 @@
+.color-primary {
+  color: #00D9D9;
+}
+.border-primary {
+  border-color: #00D9D9;
+}
+.bgc-primary {
+  background-color: #00D9D9;
+}
+a:hover,
+a:focus {
+  color: #00D9D9;
+  text-decoration: none;
+}
+form input[type="text"]:focus,
+form input[type="search"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="tel"]:focus,
+form input[type="number"]:focus,
+form textarea.form-control:focus {
+  border-color: #00D9D9;
+}
+.megatron .logo path {
+  fill: #00D9D9;
+}
+.simple-icon,
+.circle-icon {
+  color: #00D9D9;
+}
+.circle li a:hover,
+.circle-list .social li a:hover {
+  background: #00D9D9;
+}
+.circle.dark li a:hover {
+  background: #00D9D9;
+}
+.circle.light li a:hover {
+  background: #00D9D9;
+}
+.circle.primary li a {
+  background-color: #00D9D9;
+}
+.btn.btn-primary {
+  background-color: #00D9D9;
+}
+.btn.btn-gray-darker:hover,
+.btn.btn-gray-darkest:hover,
+.btn.btn-gray-base:hover,
+.btn.btn-gray-darker:focus,
+.btn.btn-gray-darkest:focus,
+.btn.btn-gray-base:focus,
+.btn.btn-gray-darker:active,
+.btn.btn-gray-darkest:active,
+.btn.btn-gray-base:active {
+  background-color: #00D9D9;
+  color: #FFFFFF;
+}
+.btn-border {
+  border: 1px solid #00D9D9;
+  color: #00D9D9;
+}
+.btn-border.btn-primary {
+  border-color: #00D9D9;
+}
+.btn-border.btn-primary {
+  color: #00D9D9;
+}
+.btn-border:hover,
+.btn-border:focus,
+.btn-border:active {
+  background-color: #00D9D9;
+  color: #FFFFFF;
+}
+.btn-border:hover.btn-primary,
+.btn-border:focus.btn-primary,
+.btn-border:active.btn-primary {
+  background-color: #00D9D9;
+}
+ol.style-2.list-primary li:before {
+  background-color: #00D9D9;
+}
+ul.list-icon.list-primary li i {
+  color: #00D9D9;
+}
+ul.list-disc.list-primary li:before,
+ul.list-square.list-primary li:before,
+ul.list-arrow.list-primary li:before {
+  color: #00D9D9;
+}
+ul.list-arrow li a:hover {
+  color: #00D9D9;
+}
+.dropcap-1.style-1 span.first-letter {
+  background-color: #00D9D9;
+  border-color: #00D9D9;
+}
+.dropcap-2.style-1 span.first-letter {
+  background-color: #00D9D9;
+  border-color: #00D9D9;
+}
+.dropcap-3.style-1 span.first-letter {
+  color: #00D9D9;
+}
+hr.hr-primary {
+  border-top-color: #00D9D9;
+}
+.hr-heading.hr-primary {
+  border-left-color: #00D9D9;
+}
+.separator-2-color:before {
+  border-right: 43px solid #00D9D9;
+}
+::-moz-selection {
+  background-color: #00D9D9;
+  color: #FFFFFF;
+}
+::selection {
+  background-color: #00D9D9;
+  color: #FFFFFF;
+}
+blockquote.blockquote-primary:before {
+  color: #00D9D9;
+}
+.menu {
+  border-bottom: 2px solid #00D9D9;
+}
+.main-menu.menu-item-hightlight-bottom > ul > li > a:hover:after,
+.main-menu.menu-item-hightlight-bottom > ul > li > a:focus:after {
+  background-color: #00D9D9;
+}
+.main-menu > ul > li ul {
+  border-bottom: 2px solid #00D9D9;
+}
+.menu-style-light .main-menu > ul > li > ul.multi-floor-menu li:hover > a,
+.menu-style-light .main-menu > ul > li > ul.multi-floor-menu a:hover {
+  color: #00D9D9;
+}
+.menu-style-light .main-menu ul > li > ul.mega-menu a:hover {
+  color: #00D9D9;
+}
+.bgc-light .nav-info i {
+  color: #00D9D9;
+}
+.select-language .dropdown-menu {
+  border-bottom: 2px solid #00D9D9;
+}
+.nav-menu-popup-trigger:hover:before,
+.nav-menu-popup-trigger:hover:after,
+.nav-menu-popup-trigger:hover span {
+  background: #00D9D9;
+}
+.nav-menu-popup-open .nav-menu-popup-trigger:hover:before,
+.nav-menu-popup-open .nav-menu-popup-trigger:hover:after,
+.nav-menu-popup-open .nav-menu-popup-trigger:hover span {
+  background: #00D9D9;
+}
+.footer-foot-4 .__content-right ul.social li a:hover {
+  background-color: #00D9D9;
+}
+.bgc-light .footer-widget-about ul.social li a:hover {
+  background-color: #00D9D9;
+}
+.footer-widget-info .__content > div > span > a:before {
+  color: #00D9D9;
+}
+.footer-widget-contact .__content > div i {
+  color: #00D9D9;
+}
+.bgc-gray-base .footer-widget-form form .__inputs > span input:focus,
+.bgc-gray-darkest .footer-widget-form form .__inputs > span input:focus,
+.bgc-gray-darker .footer-widget-form form .__inputs > span input:focus,
+.bgc-gray-darker .footer-widget-form form input:focus {
+  border-color: #00D9D9;
+}
+.bgc-gray-base .footer-widget-form form .__message textarea:focus,
+.bgc-gray-darkest .footer-widget-form form .__message textarea:focus,
+.bgc-gray-darker .footer-widget-form form .__message textarea:focus,
+.bgc-gray-darker .footer-widget-form form textarea:focus {
+  border-color: #00D9D9;
+}
+.footer-widget-tag .__content > a:hover {
+  border-color: #00D9D9;
+}
+.bgc-gray-base .footer-widget-tag .__content > a:hover,
+.bgc-gray-darkest .footer-widget-tag .__content > a:hover,
+.bgc-gray-darker .footer-widget-tag .__content > a:hover {
+  color: #00D9D9;
+  border-color: #00D9D9;
+}
+.bgc-gray-base .footer-widget-newsletter form .__inputs input:focus,
+.bgc-gray-darkest .footer-widget-newsletter form .__inputs input:focus,
+.bgc-gray-darker .footer-widget-newsletter form .__inputs input:focus {
+  border-color: #00D9D9;
+}
+.footer-widget-journal .__content .__inputs input:focus {
+  border-color: #00D9D9 !important;
+}
+.footer-widget-journal .__content .__button .btn-border:hover,
+.footer-widget-journal .__content .__button .btn-border:focus {
+  border-color: #00D9D9 !important;
+  color: #FFFFFF !important;
+  background-color: #00D9D9 !important;
+}
+.footer-widget-shop-category:hover .__title i {
+  color: #00D9D9;
+}
+.footer-widget-shop-category .__content > div a:hover {
+  border-color: #00D9D9;
+}
+.modal .modal-content .close {
+    background-color: #00D9D9;
+}
+.ui-selectmenu-menu > .ui-menu > .ui-menu-item:not(.ui-state-disabled):hover,
+.ui-selectmenu-menu > .ui-menu > .ui-menu-item:not(.ui-state-disabled).ui-state-focus {
+  background-color: #00D9D9;
+}
+.accordion.transparent.caret-primary .__icon {
+  color: #00D9D9;
+}
+.tags > a:hover {
+  background-color: #00D9D9;
+}
+.comment .__date {
+  color: #00D9D9;
+}
+
+@media only screen and (min-width: 768px ) {
+  .blog-timeline-container .__timeline-value .__dot {
+    background-color: #00D9D9;
+  }
+}
+
+.breadcrumb .__title:before {
+  background-color: #00D9D9;
+}
+.breadcrumb .__content span:not(:first-child):before {
+  color: #00D9D9;
+}
+.breadcrumb-simple .__content span:not(:first-child):before {
+  color: #00D9D9;
+}
+.call-to-action.style-1 {
+  background-color: #00D9D9;
+}
+.countdown-clock > div > span {
+  background-color: #00D9D9;
+}
+.expendable-section .expendable-section-header.bgc-primary {
+  border-color: #00D9D9;
+}
+.group-icon-list.process-style .__icon:after {
+  border-right: 1px dashed #00D9D9;
+}
+.pagination li.active a,
+.pagination li a:hover {
+  background-color: #00D9D9;
+  border-color: #00D9D9;
+}
+.pagination-simple li.active {
+  color: #00D9D9;
+}
+nav.pagination-2 .button-previous i,
+nav.pagination-2 .button-next i {
+  color: #00D9D9;
+}
+nav.pagination-2 .button-previous:hover,
+nav.pagination-2 .button-next:hover {
+  border-color: #00D9D9;
+  background-color: #00D9D9;
+}
+nav.pagination-2 ul li.active {
+  color: #00D9D9;
+}
+nav.pagination-2 .__back-to-portfolio > a:hover {
+  color: #00D9D9;
+  border-color: #00D9D9;
+}
+.portfolio-filter .filter-button.is-checked {
+  border-bottom-color: #00D9D9;
+}
+.post .__meta .__value {
+  color: #00D9D9;
+}
+.blog-masonry-container .__quote .__qauthor {
+  color: #00D9D9;
+}
+.price-table .price-table-item.default .__title {
+  background-color: #00D9D9;
+}
+.block-progressbar .progressbar {
+  background-color: #00D9D9;
+}
+.block-progressbar .progressbar {
+  background-color: #00D9D9;
+}
+.progressbar-primary .block-progressbar .progressbar {
+  background-color: #00D9D9;
+}
+.block-progressbar.vertical .progressbar-back-text {
+  color: #00D9D9;
+}
+.progressbar-primary .block-progressbar.vertical .progressbar-back-text {
+  color: #00D9D9;
+}
+.search-box button[type='submit']:hover {
+  color: #00D9D9;
+}
+.service-table .service-table-item.default .__title {
+  background-color: #00D9D9;
+}
+.block-shop-product .__image span.status.sale {
+  background-color: #00D9D9;
+}
+.lawyer-style .block-shop-product .__image .overlay ul li > a:hover {
+  background-color: #00D9D9;
+}
+.block-shop-product .__info .__price span {
+  color: #00D9D9;
+}
+.shop-account .__block .checkbox label input[type="checkbox"]:checked + span > i {
+  color: #00D9D9;
+}
+.product-listing .filter-and-sort .__hamburger:hover::before,
+.product-listing .filter-and-sort .__hamburger:hover::after,
+.product-listing .filter-and-sort .__hamburger:hover span {
+  background: #00D9D9;
+}
+.shop-sidebar-offcanvas .shop-sidebar-toggle:hover {
+  color: #00D9D9;
+}
+.product-detail .__others > p > a {
+  color: #00D9D9;
+}
+.checkout-login .__header a,
+.checkout-coupon .__header a {
+  color: #00D9D9;
+}
+.checkout-customer_detail .checkbox label input[type="checkbox"]:checked + span > i {
+  color: #00D9D9;
+}
+.checkout-payment .__title label input[type="radio"]:checked + span i.radio-button {
+  background-color: #00D9D9;
+}
+.tabs .tabs-nav > ul li.ui-tabs-active {
+  border-top-color: #00D9D9;
+}
+.tabs .tabs-nav > ul li.ui-tabs-active:before {
+  background-color: #00D9D9;
+}
+table.table-primary thead {
+  background: #00D9D9;
+}
+.group-share-module-2 > div .__icon {
+  background-color: #00D9D9;
+}
+.group-share-module-2 > div:hover {
+  border-color: #00D9D9;
+}
+@media (min-width: 900px) {
+  .group-share-module-2 > div:hover + div {
+    border-left-color: #00D9D9;
+  }
+}
+.__widget-title > h6:before,
+.__widget-title .js-el-content > h6:before,
+h6.__widget-title:before,
+.dot-heading:before {
+  background-color: #00D9D9;
+}
+.lawyer-style .widget-price-filter .price-filter .price-slider-range span {
+  background-color: #00D9D9;
+}
+.underlawyer-container .__icon {
+  color: #00D9D9;
+}
+.block-simplenews .form-actions .form-submit {
+  background-color: #00D9D9;
+}
+
+/* Hospital Appointment */
+.appointment-form .checkbox {
+  font-size: 0;
+}
+.appointment-form .checkbox label {
+  display: inline-block;
+  cursor: pointer;
+}
+.appointment-form .checkbox label input[type="checkbox"],
+.appointment-form .checkbox label input[type="radio"] {
+  display: none;
+}
+.appointment-form .checkbox label input[type="checkbox"] + span > i,
+.appointment-form .checkbox label input[type="radio"] + span > i {
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #DDDDDD;
+  background-color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+.appointment-form .checkbox label input[type="checkbox"] + span > i:before,
+.appointment-form .checkbox label input[type="radio"] + span > i:before {
+  display: block;
+  line-height: 18px;
+}
+.appointment-form .checkbox label input[type="checkbox"]:checked + span > i,
+.appointment-form .checkbox label input[type="radio"]:checked + span > i {
+  background-color: #00D9D9;
+  border-color: #00D9D9;
+}
+.appointment-form .checkbox label > span {
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  line-height: 30px;
+}
+.appointment-form .checkbox label > span:before,
+.appointment-form .checkbox label > span:after {
+  content: " ";
+  display: table;
+}
+.appointment-form .checkbox label > span:after {
+  clear: both;
+}
+.appointment-form .checkbox label > span:before,
+.appointment-form .checkbox label > span:after {
+  content: " ";
+  display: table;
+}
+.appointment-form .checkbox label > span:after {
+  clear: both;
+}
+.appointment-form .checkbox label > span i {
+  float: left;
+}
+.appointment-form .checkbox label > span span {
+  float: left;
+  display: inline-block;
+}
+.appointment-form .patient-form {
+  font-family: "Montserrat", sans-serif;
+}
+.appointment-form .patient-form input {
+  margin-bottom: 0;
+}
+.appointment-form .patient-form > div {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.appointment-form .patient-form > div:before,
+.appointment-form .patient-form > div:after {
+  content: " ";
+  display: table;
+}
+.appointment-form .patient-form > div:after {
+  clear: both;
+}
+.appointment-form .patient-form > div:before,
+.appointment-form .patient-form > div:after {
+  content: " ";
+  display: table;
+}
+.appointment-form .patient-form > div:after {
+  clear: both;
+}
+.appointment-form .patient-form > div > div {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+  margin-bottom: 20px;
+}
+.appointment-form .patient-form > div .__head {
+  line-height: 50px;
+}
+.appointment-form .patient-form > div .select-wrapper .ui-selectmenu-button span.ui-icon {
+  color: #00D9D9;
+}
+.appointment-form .patient-form .__nation .select-wrapper .select-menu {
+  max-width: 470px;
+}
+.appointment-form .patient-form .__name .__input,
+.appointment-form .patient-form .__date-of-birth .__input {
+  position: relative;
+}
+.appointment-form .patient-form .__name .__input:after,
+.appointment-form .patient-form .__date-of-birth .__input:after {
+  color: #00D9D9;
+  font-family: "megatron";
+  font-size: 20px;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  line-height: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  right: 35px;
+}
+.appointment-form .patient-form .__name .__input input,
+.appointment-form .patient-form .__date-of-birth .__input input {
+  padding-right: 60px;
+}
+.appointment-form .patient-form .__name .select-wrapper .select-menu {
+  max-width: 200px;
+}
+.appointment-form .patient-form .__name .__input:after {
+  content: "\e19e";
+}
+.appointment-form .patient-form .__date-of-birth .__input:after {
+  content: "\e0a6";
+}
+.appointment-form .patient-form .__gender .select-wrapper .select-menu {
+  max-width: 170px;
+}
+.appointment-form .patient-form .__date-of-birth .__input,
+.appointment-form .patient-form .__passport .__input,
+.appointment-form .patient-form .__telephone .__input,
+.appointment-form .patient-form .__mobile .__input {
+  max-width: 500px;
+}
+.appointment-form .patient-form .__note .__textarea {
+  font-size: 0;
+}
+.appointment-form .patient-form .__note textarea {
+  font-size: 14px;
+  height: 280px;
+  margin-bottom: 0;
+}
+.appointment-form .patient-form .__note .__textarea,
+.appointment-form .patient-form .__remark .__textarea {
+  font-size: 0;
+}
+.appointment-form .patient-form .__note textarea,
+.appointment-form .patient-form .__remark textarea {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.appointment-form .patient-form .__note textarea {
+  height: 280px;
+}
+.appointment-form .patient-form .__remark textarea {
+  height: 220px;
+}
+@media only screen and (min-width: 1020px ) {
+  .appointment-form .patient-form .__nation .__head,
+  .appointment-form .patient-form .__name .__head,
+  .appointment-form .patient-form .__gender .__head,
+  .appointment-form .patient-form .__date-of-birth .__head,
+  .appointment-form .patient-form .__passport .__head,
+  .appointment-form .patient-form .__telephone .__head,
+  .appointment-form .patient-form .__mobile .__head,
+  .appointment-form .patient-form .__email .__head,
+  .appointment-form .patient-form .__doctor .__head,
+  .appointment-form .patient-form .__remark .__head {
+    width: 25%;
+  }
+  .appointment-form .patient-form .__nation .select-wrapper {
+    width: 75%;
+  }
+  .appointment-form .patient-form .__name .select-wrapper {
+    width: 16.66666667%;
+  }
+  .appointment-form .patient-form .__name .__input {
+    width: 58.33333333%;
+  }
+  .appointment-form .patient-form .__gender .select-wrapper {
+    width: 16.66666667%;
+  }
+  .appointment-form .patient-form .__date-of-birth .__input,
+  .appointment-form .patient-form .__passport .__input,
+  .appointment-form .patient-form .__telephone .__input,
+  .appointment-form .patient-form .__mobile .__input,
+  .appointment-form .patient-form .__email .__input,
+  .appointment-form .patient-form .__doctor .__input {
+    width: 75%;
+  }
+  .appointment-form .patient-form .__remark .__textarea {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 1230px ) {
+  .appointment-form .patient-form .__nation .__head,
+  .appointment-form .patient-form .__name .__head,
+  .appointment-form .patient-form .__gender .__head,
+  .appointment-form .patient-form .__date-of-birth .__head,
+  .appointment-form .patient-form .__passport .__head,
+  .appointment-form .patient-form .__telephone .__head,
+  .appointment-form .patient-form .__mobile .__head,
+  .appointment-form .patient-form .__email .__head,
+  .appointment-form .patient-form .__doctor .__head,
+  .appointment-form .patient-form .__remark .__head {
+    width: 16.66666667%;
+  }
+  .appointment-form .patient-form .__nation .select-wrapper,
+  .appointment-form .patient-form .__gender .select-wrapper {
+    width: 83.33333333%;
+  }
+  .appointment-form .patient-form .__date-of-birth .__input,
+  .appointment-form .patient-form .__passport .__input,
+  .appointment-form .patient-form .__telephone .__input,
+  .appointment-form .patient-form .__mobile .__input,
+  .appointment-form .patient-form .__doctor .__input {
+    width: 83.33333333%;
+  }
+  .appointment-form .patient-form .__remark .__textarea {
+    width: 83.33333333%;
+  }
+}
+
+/* Multimedia */
+/* Select */
+.select-wrapper {
+  font-size: 0;
+}
+.select-wrapper .select-menu {
+  width: 100%;
+}
+.select-wrapper .ui-selectmenu-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #DDDDDD;
+  line-height: 30px;
+  background: none;
+  border-radius: 0px;
+}
+.select-wrapper .ui-selectmenu-button span.ui-icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 15px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  background: none;
+  text-indent: 0px;
+  overflow: visible;
+}
+.select-wrapper .ui-selectmenu-button span.ui-selectmenu-text {
+  text-align: left;
+  padding: 9px 40px 9px 20px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select-wrapper.__small .ui-selectmenu-button {
+  font-size: 13px;
+}
+.select-wrapper.__small .ui-selectmenu-button span.ui-selectmenu-text {
+  padding: 4px 40px 4px 20px;
+}
+.ui-selectmenu-menu {
+  z-index: 800;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  line-height: 30px;
+}
+.ui-selectmenu-menu > .ui-menu {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  display: block;
+  outline: none;
+  overflow: auto;
+  /* Support: IE7 */
+  overflow-x: hidden;
+  border: 1px solid #DDDDDD;
+  background-color: #FFFFFF;
+}
+.ui-selectmenu-menu > .ui-menu > .ui-menu-item {
+  margin-bottom: 0;
+  padding: 5px 20px;
+}
+.ui-selectmenu-menu > .ui-menu > .ui-menu-item:not(.ui-state-disabled) {
+  cursor: pointer;
+}
+.ui-selectmenu-menu > .ui-menu > .ui-menu-item:not(.ui-state-disabled):hover,
+.ui-selectmenu-menu > .ui-menu > .ui-menu-item:not(.ui-state-disabled).ui-state-focus {
+  background-color: #00D9D9;
+  color: #FFFFFF;
+  border: none;
+  background-image: none;
+}
+.ui-selectmenu-menu > .ui-menu > .ui-menu-item.ui-state-disabled {
+  color: #888888;
+}
+.ui-selectmenu-menu > .ui-menu .ui-menu {
+  position: absolute;
+}
+.ui-selectmenu-menu > .ui-menu.__small {
+  font-size: 13px;
+}
+.ui-selectmenu-menu.ui-selectmenu-open {
+  display: block;
+}

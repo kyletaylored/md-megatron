@@ -1,0 +1,5 @@
+name: AWE Megatron Alert Message
+type: module
+description: AWE Megatron Alert Message - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

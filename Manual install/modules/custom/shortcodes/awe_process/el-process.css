@@ -1,0 +1,26 @@
+.process-item {
+	display: none;
+	/*overflow: hidden;*/
+}
+.process-1.style-1,
+.process-2.style-2 {
+	display: block;
+}
+.process-item .circle-icon > i {
+	display: inline-block;
+	float: none;
+}
+.process-item .circle-icon {
+    position: relative;
+    border-radius: 50%;
+}
+.process-icon {
+	background-color: #00B863;
+}
+.line {
+	background: #99e3c1;
+	display: none;
+}
+.line.true {
+	display: block;
+}

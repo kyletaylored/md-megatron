@@ -1,0 +1,12 @@
+name: AwePage
+type: module
+description: Create Page for your site using AweContent.
+package: AweContent
+dependencies:
+  - awe_builder
+
+version: '8.x-1.0'
+core: 8.x
+project: 'awe_page'
+project status url: 'http://megadrupal.com/fserver'
+datestamp: 1505278303

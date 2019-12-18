@@ -1,0 +1,349 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the theme.
+ */
+
+function md_megatron_preprocess_html(&$vars) {
+	$css = "";
+	
+	//Get & Set background-color
+	if(theme_get_setting('background_color')) {
+		$bg_color = hsvToRgb(theme_get_setting('background_color'));
+
+		if(isset($bg_color[3])) {
+			$bg_color = "rgba(" . fGetRGB($bg_color[0], $bg_color[1], $bg_color[2]) . "," . $bg_color[3] . ")";	
+		} else {
+			$bg_color = "rgb(" . fGetRGB($bg_color[0], $bg_color[1], $bg_color[2]) . ")";
+		}
+	} else {
+		$bg_color = "transparent";
+	}
+	
+	$css .= 'body { background: '.$bg_color.'; }'."\n";
+
+	if(theme_get_setting('background_image') == "custom-bg") {
+		//Get & Set background image
+		if(isset(theme_get_setting('custom_background')[0])) {
+			$file = file_load(theme_get_setting('custom_background')[0]);
+			if(isset($file))
+				$bg_image = file_create_url($file->getFileUri());
+
+			$css .= 'body { background-image: url('.$bg_image.'); }'."\n";
+		}
+
+		//Get & Set background postion, background mode
+		$bg_position = theme_get_setting('custom_background_position');
+		$css .= 'body { background-position: '.$bg_position.'; }'."\n";
+
+		$bg_mode = theme_get_setting('custom_background_mode');
+		if($bg_mode == "fixed") {
+			$css .= 'body { background-attachment: '.$bg_mode.'; background-repeat: no-repeat; background-size: cover; }'."\n";
+		} else if($bg_mode == "cover") {
+			$css .= 'body { background-size: '.$bg_mode.'; background-repeat: no-repeat; }'."\n";
+		} else {
+			$css .= 'body { background-repeat: '.$bg_mode.'; }'."\n";
+		}
+	}
+
+	//Get & Set font family
+	$font_family = str_replace('|', '%7C', theme_get_setting('googlewebfonts'));
+
+	//Get & Set font-style
+	$headings = array(1,2,3,4,5,6);
+	foreach($headings as $item) {
+		if(theme_get_setting('h'.$item.'-font-type') == "google-font") {
+			$color = hsvToRgb(theme_get_setting('h'.$item.'-color'));
+			$family = str_replace("'", "", theme_get_setting('h'.$item.'-webfont'));
+			$family = str_replace('"', '', $family);
+			
+			$css .= 'h'.$item.' { font-family: '.$family.'; }'."\n";
+			$css .= 'h'.$item.' { font-size: '.theme_get_setting('h'.$item.'-fontsize').'px; }'."\n";
+			$css .= 'h'.$item.' { color: rgb(' . fGetRGB($color[0], $color[1], $color[2]) . '); }'."\n";
+			$css .= 'h'.$item.' { font-weight: '.theme_get_setting('h'.$item.'-fontweight').'; }'."\n";
+			$css .= 'h'.$item.' { font-style: '.theme_get_setting('h'.$item.'-font-style').'; }'."\n";
+		}
+	}
+
+	//Get & Set hyperlinks
+	$links = array('normal', 'hover', 'visited', 'active');
+	foreach($links as $item) {
+		$color = hsvToRgb(theme_get_setting('link-'.$item.'-color'));
+		if($color[0] != "") {
+			$color = fGetRGB($color[0], $color[1], $color[2]);
+			if($item == "normal") {
+				$css .= 'a { color: '.$color.'; text-decoration: ' . theme_get_setting('link-'.$item.'-decoration') .'; font-weight: '. theme_get_setting('link-'.$item.'-fontweight') .'; font-style: '. theme_get_setting('link-'.$item.'-font-style') .'; }'."\n";
+			} else if($item == "hover") {
+				$css .= 'a:hover { color: '.$color.'; text-decoration: ' . theme_get_setting('link-'.$item.'-decoration') .'; font-weight: '. theme_get_setting('link-'.$item.'-fontweight') .'; font-style: '. theme_get_setting('link-'.$item.'-font-style') .'; }'."\n";
+			} else if($item == "visited") {
+				$css .= 'a:visited { color: '.$color.'; text-decoration: ' . theme_get_setting('link-'.$item.'-decoration') .'; font-weight: '. theme_get_setting('link-'.$item.'-fontweight') .'; font-style: '. theme_get_setting('link-'.$item.'-font-style') .'; }'."\n";
+			} else {
+				$css .= 'a:active { color: '.$color.'; text-decoration: ' . theme_get_setting('link-'.$item.'-decoration') .'; font-weight: '. theme_get_setting('link-'.$item.'-fontweight') .'; font-style: '. theme_get_setting('link-'.$item.'-font-style') .'; }'."\n";
+			}
+		}
+	}
+
+	//Get & Set body font
+	if(theme_get_setting('h'.$item.'-font-type') == "google-font") {
+		$color = hsvToRgb(theme_get_setting('base_color'));
+		$family = str_replace("'", "", theme_get_setting('base_webfont'));
+		$family = str_replace('"', '', $family);
+		
+		$css .= 'body { font-family: '.$family.'; }'."\n";
+		$css .= 'body { font-size: '.theme_get_setting('base_fontsize').'px; }'."\n";
+		$css .= 'body { color: rgb(' . fGetRGB($color[0], $color[1], $color[2]) . '); }'."\n";
+		$css .= 'body { font-weight: '.theme_get_setting('base_fontweight').'; }'."\n";
+		$css .= 'body { font-style: '.theme_get_setting('base_font_style').'; }'."\n";
+	}
+
+
+	$vars['theme_setting_css'] = $css;
+	$vars['google_font'] = $font_family;
+	$vars['header_code'] = theme_get_setting('code_header');
+	$vars['footer_code'] = theme_get_setting('code_footer');
+	if (theme_get_setting('code_css')) {
+		$vars['custom_css'] = theme_get_setting('code_css');
+	}
+}
+function md_megatron_preprocess_node(&$vars) {
+	$vars['base_path'] = base_path();
+
+	$node = $vars['elements']['#node'];
+	$node_type = $node->getType();
+	$nid = $node->id();
+
+	if($node_type == "portfolio") {
+		if($vars['view_mode'] == 'teaser') {
+			//portfolio categories
+			$categories = $node->field_portfolio_categories->referencedEntities();
+			$count = 0;
+			$cate_result = "";
+			foreach($categories as $category) {
+				$count++;
+				if($count < count($categories)) {
+					$cate_result .= "<a href=". $category->url() .">". $category->getName() ."</a>, ";
+				} else {
+					$cate_result .= "<a href=". $category->url() .">". $category->getName() ."</a>";
+				}
+			}
+
+			$vars['cate'] = $cate_result;
+
+			//portfolio tags
+			$tags = $node->field_portfolio_tags->referencedEntities();
+			$count = 0;
+			$tag_result = "";
+			foreach($tags as $tag) {
+				$count++;
+				if($count < count($tags)) {
+					$tag_result .= "<a href=". $tag->url() .">". $tag->getName() ."</a>, ";
+				} else {
+					$tag_result .= "<a href=". $tag->url() .">". $tag->getName() ."</a>";
+				}
+			}
+
+			$vars['tags'] = $tag_result;
+		}
+
+		if($vars['view_mode'] == 'full') {
+			$query = db_select('node_field_data', 'n');
+			$query->fields('n', array('nid'))
+				  ->condition('type', $node_type)
+				  ->condition('status', NODE_PUBLISHED)
+				  ->orderBy('nid');
+			$result = $query->execute();
+			$nids = array();
+			while ($record = $result->fetchAssoc()) {
+				$nids[] .= $record['nid'];
+			}
+			$current_node_key =  array_search($nid, $nids);
+
+			if(($current_node_key - 1) >= 0) {
+				$node_prev = node_load($nids[$current_node_key - 1]);
+				$vars['prev_node_nid'] = $node_prev->id();
+				$vars['prev_node_title'] = $node_prev->getTitle();
+			}
+			if(($current_node_key + 1) != sizeof($nids)) {
+				$node_next = node_load($nids[$current_node_key + 1]);
+				$vars['next_node_nid'] = $node_next->id();
+				$vars['next_node_title'] = $node_next->getTitle();
+			}
+		}
+	}
+}
+function md_megatron_preprocess_comment(&$vars) {
+	$vars['base_path'] = base_path();
+}
+function md_megatron_preprocess_maintenance_page(&$vars) {
+	$vars['base_path'] = base_path();
+	$vars['default_logo'] = theme_get_setting('logo.use_default');
+	$vars['logo_path'] = theme_get_setting('logo.path');
+}
+function md_megatron_preprocess_page(&$vars) {
+	/*\Drupal::routeMatch()->getRouteObject()->getOptions();*/
+
+	$vars['login_form'] = $vars['register_form'] = FALSE;
+	if (!\Drupal::currentUser()->id()) {
+		$form = Drupal::formBuilder()->getForm(Drupal\user\Form\UserLoginForm::class) ;
+		$render = Drupal::service('renderer');
+		$vars['login_form'] = $render->renderPlain($form);
+
+		$entity = \Drupal::entityManager()->getStorage('user')->create(array());
+		$formObject = \Drupal::entityManager()->getFormObject('user', 'register')->setEntity($entity);
+		$form = \Drupal::formBuilder()->getForm($formObject);
+		$vars['register_form'] = $form;
+	}
+
+	$block = \Drupal\block\Entity\Block::load('md_megatron_search');
+	$search_block = \Drupal::entityManager()->getViewBuilder('block')->view($block);
+
+	$vars['search_block'] = $search_block;
+}
+function md_megatron_preprocess_block(&$vars) {
+	$vars['base_path'] = base_path();
+	$vars['default_logo'] = theme_get_setting('logo.use_default');
+	$vars['logo_path'] = theme_get_setting('logo.path');
+}
+function md_megatron_form_comment_form_alter(&$form, &$form_state) {
+	unset($form['actions']['preview']);
+	unset($form['subject']);
+	unset($form['author']['name']);
+
+	$form['field_comment_name']['widget']['0']['value']['#title_display'] = 'invisible';
+	$form['field_comment_name']['widget']['0']['value']['#attributes'] = array('placeholder' => t('Name'));
+	$form['field_comment_name']['#prefix'] = '<div class="row"><div class="col-md-6">';
+	$form['field_comment_name']['#suffix'] = '</div>';
+
+	$form['field_comment_phone']['widget']['0']['value']['#title_display'] = 'invisible';
+	$form['field_comment_phone']['widget']['0']['value']['#attributes'] = array('placeholder' => t('Phone'));
+	$form['field_comment_phone']['#prefix'] = '<div class="col-md-6">';
+	$form['field_comment_phone']['#suffix'] = '</div>';
+
+	$form['field_comment_email']['widget']['0']['value']['#title_display'] = 'invisible';
+	$form['field_comment_email']['widget']['0']['value']['#attributes'] = array('placeholder' => t('Email'));
+	$form['field_comment_email']['#prefix'] = '<div class="col-md-12">';
+	$form['field_comment_email']['#suffix'] = '</div>';
+
+	$form['field_comment_body']['widget']['0']['value']['#title_display'] = 'invisible';
+	$form['field_comment_body']['widget']['0']['value']['#attributes'] = array('placeholder' => t('Message'));
+	$form['field_comment_body']['#prefix'] = '<div class="col-md-12">';
+	$form['field_comment_body']['#suffix'] = '</div></div>';
+
+	$form['actions']['submit']['#value'] = 'Post comment';
+	$form['actions']['submit']['#attributes']['class'][] = 'btn btn-size-2 btn-primary';
+}
+function md_megatron_preprocess_views_view_unformatted(&$vars) {
+	$view = $vars['view'];
+	$id = $view->current_display;
+	$view_display = array("three_col_portfolio_style_1", "three_col_portfolio_style_2", "three_col_portfolio_style_3", "three_col_portfolio_style_4", "three_col_portfolio_style_5", "three_col_portfolio_style_6", "three_col_portfolio_nospace", "three_col_portfolio_wide", "three_col_portfolio_wide_nospace", "four_col_portfolio_style_1", "four_col_portfolio_style_2", "four_col_portfolio_style_3", "four_col_portfolio_style_4", "four_col_portfolio_style_5", "four_col_portfolio_style_6", "four_col_portfolio_nospace", "four_col_portfolio_wide", "four_col_portfolio_wide_nospace", "five_col_portfolio_style_1", "five_col_portfolio_style_2", "five_col_portfolio_style_3", "five_col_portfolio_style_4", "five_col_portfolio_style_5", "five_col_portfolio_style_6", "five_col_portfolio_nospace", "five_col_portfolio_wide", "five_col_portfolio_wide_nospace", "masonry_portfolio", "masonry_portfolio_nospace", "two_col_portfolio_style_1", "two_col_portfolio_style_2", "two_col_portfolio_style_3");
+
+	if(in_array($id, $view_display)) {
+		$filter = "";
+		$string = "";
+		$terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('portfolio_categories');
+		foreach ($terms as $term) {
+			$string = str_replace(' ', '', strtolower($term->name));
+			$string = str_replace('&', '-', $string);
+			$string = str_replace('/', '-', $string);
+			$filter .= '<a href="#" data-filter=".' . $string . '" class="filter-button">' . strtoupper($term->name) . '</a>';
+		}
+
+		$vars["portfolio_filter"] = $filter;
+	}
+}
+function hsvToRgb($color) {
+	$color = str_replace("(", "", $color);
+	$color = str_replace(")", "", $color);
+	$color = str_replace("hsva", "", $color);
+	$color = str_replace("hsv", "", $color);
+	$color = str_replace("%", "", $color);
+	$color = str_replace(" ", "", $color);
+	$color = explode(",", $color);
+
+	return $color;
+}
+function fGetRGB($iH, $iS, $iV) {
+	if($iH < 0)   $iH = 0;   // Hue:
+	if($iH > 360) $iH = 360; //   0-360
+	if($iS < 0)   $iS = 0;   // Saturation:
+	if($iS > 100) $iS = 100; //   0-100
+	if($iV < 0)   $iV = 0;   // Lightness:
+	if($iV > 100) $iV = 100; //   0-100
+	$dS = $iS/100.0; // Saturation: 0.0-1.0
+	$dV = $iV/100.0; // Lightness:  0.0-1.0
+	$dC = $dV*$dS;   // Chroma:     0.0-1.0
+	$dH = $iH/60.0;  // H-Prime:    0.0-6.0
+	$dT = $dH;       // Temp variable
+	while($dT >= 2.0) $dT -= 2.0; // php modulus does not work with float
+	$dX = $dC*(1-abs($dT-1));     // as used in the Wikipedia link
+	switch(floor($dH)) {
+		case 0:
+			$dR = $dC; $dG = $dX; $dB = 0.0; break;
+		case 1:
+			$dR = $dX; $dG = $dC; $dB = 0.0; break;
+		case 2:
+			$dR = 0.0; $dG = $dC; $dB = $dX; break;
+		case 3:
+			$dR = 0.0; $dG = $dX; $dB = $dC; break;
+		case 4:
+			$dR = $dX; $dG = 0.0; $dB = $dC; break;
+		case 5:
+			$dR = $dC; $dG = 0.0; $dB = $dX; break;
+		default:
+			$dR = 0.0; $dG = 0.0; $dB = 0.0; break;
+	}
+	$dM  = $dV - $dC;
+	$dR += $dM; $dG += $dM; $dB += $dM;
+	$dR *= 255; $dG *= 255; $dB *= 255;
+	return round($dR).",".round($dG).",".round($dB);
+}
+function md_megatron_form_alter(&$form, &$form_state) {
+	if($form['#form_id'] == "webform_submission_contact_form_form" || $form['#form_id'] == "webform_submission_contact_form_user_1_form") {
+		$form['elements']['name']['#attributes'] = array('placeholder' => t('Name'));
+		$form['elements']['email']['#attributes'] = array('placeholder' => t('Email'));
+		$form['elements']['phone']['#attributes'] = array('placeholder' => t('Phone'));
+		$form['elements']['message']['#attributes'] = array('placeholder' => t('Message'));
+
+		$form['actions']['submit']['#prefix'] = '<div class="col-md-12 text-center-md-max">';
+		$form['actions']['submit']['#suffix'] = '</div>';
+		$form['actions']['submit']['#attributes']['class'][] = 'btn btn-size-2 btn-primary';
+		$form['actions']['submit']['#value'] = 'Send message';
+	}
+	if($form['#form_id'] == "webform_submission_enquiry_questions_form") {
+		$form['#prefix'] = '<div class="__content">';
+		$form['#suffix'] = '</div>';
+
+		$form['elements']['text_1']['#attributes'] = array('placeholder' => t('Serious Questions'));
+		$form['elements']['text_2']['#attributes'] = array('placeholder' => t('Finally here!'));
+
+		$form['actions']['submit']['#prefix'] = '<div class="__button">';
+		$form['actions']['submit']['#suffix'] = '</div>';
+		$form['actions']['submit']['#attributes']['class'][] = 'btn-border';
+		$form['actions']['submit']['#value'] = 'MORE ABOUT OUR JOUNEY';
+	}
+	if($form['#form_id'] == "search_block_form") {
+		$form['keys']['#attributes']['placeholder'] = t( 'Search...' );
+		$form['#attributes']['class'][] = "search-form";
+	}
+	if($form['#form_id'] == "user_login_form") {
+		$form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary form-submit';
+	}
+	if($form['#form_id'] == "user_register_form") {
+		unset($form['contact']);
+		unset($form['timezone']);
+		unset($form['user_picture']);
+		unset($form['field_account_about']);
+		unset($form['field_account_facebook']);
+		unset($form['field_account_pinterest']);
+		unset($form['field_account_twitter']);
+		unset($form['field_account_twitter']);
+		unset($form['field_account_linkedin']);
+		unset($form['field_account_googleplus']);
+
+		$form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary form-submit';
+	}
+	if($form['#form_id'] == "user_pass") {
+		$form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary form-submit';
+	}
+}

@@ -1,0 +1,22 @@
+{% set classes = ['message', 'js-message'] %}
+
+{% if message["type"] %}
+    {% set classes = classes|merge([message["type"]]) %}    
+{% endif %}
+
+{% if message["style"] %}
+{% set classes = classes|merge([message["style"]]) %}    
+{% endif %}
+
+<div {{ attributes.addClass(classes) }}>
+    {% if message["enableicon"] %}
+        <div class="__icon"><i class="{% if message["icon"] %} {{message["icon"]}} {% else %} fa fa-thumbs-up {% endif %}"></i></div>
+    {% endif %}
+    <h6 class="message_title">{{ main['title'] }}</h6>
+    <p class="mb-0 message__content fz-6-s">
+            {{ main['content'] }}
+    </p>
+    {% if message["enableclose"] %}
+        <div class="__close"><a href="#" class="close  js-btn-close" data-dismiss="message" aria-label="close" title="close">&#9587;</a></div>
+    {% endif %}
+</div>

@@ -1,0 +1,13 @@
+
+.awe-clear-both:after{clear: both;}
+.awe-hidden{display: none !important; }
+.awe-btn-marin-top{margin-top: 50px;}
+#awe-preloader{font-size: 35px; color: red; text-align: center; margin-top: 350px;}
+body.awecontent-active, body.admin-menu.awecontent-active{
+    /* fix for default toolbar*/
+    padding-top: 0px !important;
+    /* fix for admin menu toolbar*/
+    margin-top: 0px !important;
+}
+.awecontent-wrapper{ background-image: none;}
+.js-ac-buildzone iframe{width: 100vw;}

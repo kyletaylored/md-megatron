@@ -1,0 +1,16 @@
+<div class="col-md-4 col-sm-6 col-xs-12 section-block">
+	<div class="block-blog-post-1 text-center">
+		<div class="__image mb-25">
+			<a href="{{ fields.path.content }}">
+				<div class="overlay-container">
+					<img src="{{ fields.field_news_thumbnail.content }}" alt="{{ fields.title.content }}"/>
+					<div class="overlay-hover bgc-dark-o-4"></div>
+				</div>
+			</a>
+		</div>
+		<div class="__content">
+			<div class="__title"><a href="{{ fields.path.content }}" class="font-heading fz-6 mb-5">{{ fields.title.content }}</a></div>
+			<p class="font-serif-italic color-gray mb-0"><a href="#">{{ fields.created.content }}</a>&nbsp;/&nbsp;<a href="#">{{ fields.uid.content }}</a>&nbsp;/&nbsp;{{ fields.field_news_categories.content }}</p>
+		</div>
+	</div>
+</div>

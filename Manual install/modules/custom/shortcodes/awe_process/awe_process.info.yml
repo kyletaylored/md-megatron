@@ -1,0 +1,5 @@
+name: AWE Megatron Process
+type: module
+description: AWE Megatron Process - AWE Builder Shortcodes
+core: 8.x
+package: MegaDrupal Shortcodes

@@ -1,0 +1,131 @@
+.md-objects .md-object.md-layer-1-1-0 {
+z-index: 997 !important; color: #ffffff !important;
+ text-align: center;
+ font-size: 1.6666666666667em;
+ font-weight: 400;
+ font-style: italic;
+ font-family: "Playfair Display";
+ text-transform: none;
+}
+.md-objects .md-object.md-layer-1-1-1 {
+z-index: 996 !important; color: #ffffff !important;
+ text-align: center;
+ font-size: 6.25em;
+ font-weight: 700;
+ font-family: "Montserrat";
+ text-transform: uppercase;
+}
+.md-objects .md-object.md-layer-1-1-2{font-size: inherit; }
+.md-objects .md-object.md-layer-1-1-2 a {
+border: 1px solid #ffffff;
+ padding-top: 15px;
+ padding-bottom: 15px;
+ color: #ffffff !important;
+ text-align: center;
+ font-size: 1.0833333333333em;
+ font-weight: 400;
+ font-family: "Montserrat";
+}
+.md-objects .md-object.md-layer-1-1-2 {z-index: 1000!important;}
+.md-objects .md-object.md-layer-1-1-3{font-size: inherit; }
+.md-objects .md-object.md-layer-1-1-3 a {
+background: #000000;
+ padding-top: 15px;
+ padding-bottom: 15px;
+ color: #ffffff !important;
+ text-align: center;
+ font-size: 1.0833333333333em;
+ font-weight: 400;
+ font-family: "Montserrat";
+}
+.md-objects .md-object.md-layer-1-1-3 {z-index: 999!important;}
+.md-objects .md-object.md-layer-1-81-0 {
+z-index: 996 !important; color: #ffffff !important;
+ text-align: left;
+ font-size: 1.6666666666667em;
+ font-weight: 400;
+ font-style: italic;
+ font-family: "Playfair Display";
+ text-transform: none;
+}
+.md-objects .md-object.md-layer-1-81-1 {
+z-index: 997 !important; color: #ffffff !important;
+ text-align: left;
+ font-size: 6.25em;
+ font-weight: 700;
+ font-family: "Montserrat";
+ text-transform: uppercase;
+}
+.md-objects .md-object.md-layer-1-81-2 {
+z-index: 999 !important; border: 1px solid #ffffff;
+ padding-top: 15px;
+ padding-bottom: 15px;
+ color: #ffffff !important;
+ text-align: center;
+ font-size: 1.0833333333333em;
+ font-weight: 400;
+ font-family: "Montserrat";
+}
+.md-objects .md-object.md-layer-1-81-3 {
+background: #000000;
+ z-index: 1000 !important; padding-top: 15px;
+ padding-bottom: 15px;
+ color: #ffffff !important;
+ text-align: center;
+ font-size: 1.0833333333333em;
+ font-weight: 400;
+ font-family: "Montserrat";
+}
+.md-objects .md-object.md-layer-1-81-4 {
+z-index: 998 !important; color: #ffffff !important;
+ text-align: left;
+ font-size: 6.25em;
+ font-weight: 700;
+ font-family: "Montserrat";
+ text-transform: uppercase;
+}
+.md-objects .md-object.md-layer-1-82-0 {
+z-index: 2 !important; color: #ffffff !important;
+ text-align: left;
+ font-size: 1.6666666666667em;
+ font-weight: 400;
+ font-style: italic;
+ font-family: "Playfair Display";
+ text-transform: none;
+}
+.md-objects .md-object.md-layer-1-82-1 {
+z-index: 2 !important; color: #ffffff !important;
+ text-align: left;
+ font-size: 6.25em;
+ font-weight: 700;
+ font-family: "Montserrat";
+ text-transform: uppercase;
+}
+.md-objects .md-object.md-layer-1-82-2 {
+z-index: 2 !important; border: 1px solid #ffffff;
+ padding-top: 15px;
+ padding-bottom: 15px;
+ color: #ffffff !important;
+ text-align: center;
+ font-size: 1.0833333333333em;
+ font-weight: 400;
+ font-family: "Montserrat";
+}
+.md-objects .md-object.md-layer-1-82-3 {
+background: #000000;
+ z-index: 2 !important; padding-top: 15px;
+ padding-bottom: 15px;
+ color: #ffffff !important;
+ text-align: center;
+ font-size: 1.0833333333333em;
+ font-weight: 400;
+ font-family: "Montserrat";
+}
+.md-objects .md-object.md-layer-1-82-4 {
+z-index: 2 !important; color: #ffffff !important;
+ text-align: left;
+ font-size: 6.25em;
+ font-weight: 700;
+ font-family: "Montserrat";
+ text-transform: uppercase;
+}

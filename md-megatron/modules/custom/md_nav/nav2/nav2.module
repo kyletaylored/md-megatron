@@ -1,0 +1,14 @@
+<?php
+
+function nav2_theme($existing, $type, $theme, $path) {
+  return array('nav2_template' =>                  // this is the name of the template
+           array(
+            'variables' => array(
+                'logo' => '',
+                'menu' => null,
+                'sitename' => null,
+                'base_path' => null
+            ),
+        )
+    );
+}

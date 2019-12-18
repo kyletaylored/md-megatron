@@ -1,0 +1,15 @@
+<div class="__image">
+	<a href="{{ fields.path.content }}">
+		<div class="overlay-container">
+			<img src="{{ fields.field_news_thumbnail.content }}" alt="{{ fields.title.content }}"/>
+			<div class="overlay-hover bgc-dark-o-4"></div>
+		</div>
+	</a>
+</div>
+<div class="__content">
+	<div class="__title"><a href="{{ fields.path.content }}" class="font-heading">{{ fields.title.content }}</a></div>
+	<p class="font-serif-italic color-gray __info section-block-small-p">
+		<a href="#">{{ fields.created.content }}</a>&nbsp;/&nbsp;<a href="#">{{ fields.uid.content }}</a>&nbsp;/&nbsp;{{ fields.field_news_categories.content }}
+	</p>
+	<p class="__text">{{ fields.body.content }}</p>
+</div>

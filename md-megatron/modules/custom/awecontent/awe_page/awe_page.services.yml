@@ -1,0 +1,9 @@
+services:
+  awe_page.manager:
+    class: Drupal\awe_page\AwePageManager
+    arguments: ['@database']
+  awe_page.access_checker:
+    class: Drupal\awe_page\Access\AwePageAccessCheck
+    arguments: ['@awe_page.manager']
+    tags:
+      - { name: access_check, applies_to: _awe_page_access_check }

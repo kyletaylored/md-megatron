@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+    <link href='{{ google_font }}' rel='stylesheet' type='text/css' />
+    <link href="//fonts.googleapis.com/css?family=Montserrat:700,400" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic&amp;subset=latin,latin-ext,cyrillic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style type="text/css">
+      {% if theme_setting_css is defined %}
+        {{ theme_setting_css }}
+      {% endif %}
+      {% if custom_css is defined %}
+        {{ custom_css }}
+      {% endif %}
+    </style>
+    {% if header_code is defined %}
+      {{ header_code }}
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{{ base_path ~ directory }}/css/front/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path ~ directory }}/css/front/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path ~ directory }}/css/front/font.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path ~ directory }}/css/front/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body{{ attributes }}>
+      <div class="page-content">
+        <header class="page-header border-bottom-lighter text-center pt-25 pb-25">
+          <a href="./" class="megatron inline size-2">
+            {% if default_logo %}
+              <div class="logo">
+                <svg viewBox="0 0 100 100">
+                    <g>
+                        <path d="M64.264,31.886v56.803l-14.319,8.259l-14.319-8.259v-74.3L14.157,26.771v41.271l7.156,4.128V30.905   l13.467-7.768v8.26l-6.311,3.64V84.56L7,72.178v-49.54L42.781,2v82.553l7.162,4.132l7.163-4.132V27.758L64.264,31.886z    M43.626,26.294l6.317-3.644L71.42,35.038V84.56l21.469-12.382v-49.54L57.106,2v15.546l7.157,4.128v-7.285l21.469,12.382v41.271   l-7.156,4.128V30.905L49.943,14.391l-6.317,3.644V26.294z"/>
+                    </g>
+                </svg>
+              </div>
+              <div class="brand">MEGATRON</div>
+            {% else %}
+              <img src="{{ file_url(logo_path) }}" alt="" />
+            {% endif %}
+          </a>
+      </header>
+      <!--End Page Header-->
+      <!--Page Body-->
+      <div id="page-body" class="page-body">
+        <section class="page-section bgc-light no-padding underconstruction-section">
+          <div class="cell-vertical-wrapper">
+            <div class="cell-middle">
+              <div class="container text-center underconstruction-container">
+                <div class="__icon icon-clock"></div>
+                <h2 class="smb __title">THIS SITE IS UNDER CONSTRUCTION</h2>
+                <p class="__caption font-serif-italic">we're working on some improvements and will come back in</p>
+                <div class="countdown-wrapper text-center">
+                  <div data-final-time="2017-10-16 08:24:34" class="countdown-clock"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!--End Page Body-->
+    </div>

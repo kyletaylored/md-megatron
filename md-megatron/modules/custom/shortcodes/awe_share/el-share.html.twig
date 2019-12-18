@@ -1,0 +1,13 @@
+{% if main["style"] == "style-1" %}
+	<div class="group-share-module-1 share-item share-1 {{ main["style"] }} {{ column["column"] }}">
+		{% for value in main['social_list_value'] %}
+			<div class="module"><a href="{{ value["data"] }}" data-color="{{ value["color"] }}" data-hover-color="{{ value["highlight"] }}" data-bg-color="{{ value["bg_color"] }}" data-bg-hover-color="{{ value["bg_highlight"] }}"><span data-lang="en" class="chaffle">{{ value["label"] }}</span></a></div>
+		{% endfor %}
+	</div>
+{% elseif main["style"] == "style-2" %}
+	<div class="group-share-module-2 share-item share-2 {{ main["style"] }} {{ column["column"] }}">
+		{% for value in main['social_list_value'] %}
+			<div class="module"><a href="{{ value["data"] }}" data-color="{{ value["color"] }}" data-hover-color="{{ value["highlight"] }}" data-bg-color="{{ value["bg_color"] }}" data-bg-hover-color="{{ value["bg_highlight"] }}"><div class="__block"><span class="__icon"><i class="{{ value["choose_icon"] }}"></i></span><span class="__name">{{ value["label"] }}</span></div></a></div>
+		{% endfor %}
+	</div>
+{% endif %}

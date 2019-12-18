@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the theme.
+ */
+
+function md_megatron_hospital_form_alter(&$form, &$form_state) {
+	if($form['#form_id'] == "webform_submission_appoinment_form") {
+		$form['actions']['submit']['#value'] = 'Make Inquiry';
+		$form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary no-border';
+	}
+}

@@ -1,0 +1,201 @@
+{#
+/**
+ * @file
+ * Theme implementation for a 'webform' element.
+ *
+ * This is an copy of the webform.html.twig theme_wrapper which includes the
+ * 'title_prefix' and 'title_suffix' variables needed for
+ * contextual links to appear.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the webform.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_webform()
+ * @see _webform_form_after_build()
+ *
+ * @ingroup themeable
+ */
+#}
+<form{{ attributes }}>
+	{{ title_prefix }}
+
+	<div class="appointment-form">
+		<div class="container pb-25">
+			<div class="row">
+				<div class="col-xs-12">
+					<h5 class="color-primary">{{ element.elements.paragraph_1 }}</h5>
+				</div>
+			</div>
+			<div class="row">
+				{% set i = 0 %}
+				{% for key,value in element.elements.activity['#options'] %}
+					{% set i = i + 1 %}
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-10">
+						<div class="checkbox">
+							<label>
+								<input data-drupal-selector="{{ element.elements.activity[key]['#id'] }}" id="{{ element.elements.activity[key]['#id'] }}" class="form-radio" type="radio" name="{{ element.elements.activity[key]['#name'] }}" value="{{ key }}" {% if i == 1 %} checked {% endif %} />
+								<span>
+									<i class="icon-check"></i>
+									<span class="font-heading">{{ value }}</span>
+								</span>
+							</label>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="container pb-25">
+			<div class="row">
+				<div class="col-xs-12">
+					<h5 class="color-primary">{{ element.elements.paragraph_2 }}</h5>
+				</div>
+			</div>
+			<div class="row">
+				{% set i = 0 %}
+				{% for key,value in element.elements.clinic_options['#options'] %}
+					{% set i = i + 1 %}
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-10">
+						<div class="checkbox">
+							<label>
+								<input data-drupal-selector="{{ element.elements.clinic_options[key]['#id'] }}" id="{{ element.elements.clinic_options[key]['#id'] }}" class="form-radio" type="radio" name="{{ element.elements.clinic_options[key]['#name'] }}" value="{{ key }}" {% if i == 1 %} checked {% endif %} />
+								<span>
+									<i class="icon-check"></i>
+									<span class="font-heading">{{ value }}</span>
+								</span>
+							</label>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="container pb-20">
+			<h5 class="color-primary">{{ element.elements.paragraph_3 }}</h5>
+			<div class="patient-form">
+				<div class="__nation">
+					<div class="__head">(*) {% trans %} Nationality {% endtrans %}</div>
+					<div class="select-wrapper">
+						<select data-drupal-selector="{{ element.elements.nationality['#id'] }}" id="{{ element.elements.nationality['#id'] }}" name="{{ element.elements.nationality['#name'] }}" class="select-menu">
+							{% set i = 0 %}
+							{% for key,value in element.elements.nationality['#options'] %}
+								{% set i = i + 1 %}
+								{% if i > 1 %}
+									<option value="{{ key }}">{{ value }}</option>
+								{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="__name">
+					<div class="__head">(*) {% trans %} Patient name {% endtrans %}</div>
+					<div class="select-wrapper">
+						<select data-drupal-selector="{{ element.elements.title['#id'] }}" id="{{ element.elements.title['#id'] }}" name="{{ element.elements.title['#name'] }}" class="select-menu">
+							{% set i = 0 %}
+							{% for key,value in element.elements.title['#options'] %}
+								{% set i = i + 1 %}
+								{% if i > 1 %}
+									<option value="{{ key }}">{{ value }}</option>
+								{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+					<div class="__input">
+						<input data-drupal-selector="edit-{{ element.elements.name['#name'] }}" type="text" name="{{ element.elements.name['#name'] }}" id="{{ element.elements.name['#id'] }}">
+					</div>
+				</div>
+				<div class="__gender">
+					<div class="__head">(*) {% trans %} Gender {% endtrans %}</div>
+					<div class="select-wrapper">
+						<select data-drupal-selector="{{ element.elements.gender['#id'] }}" id="{{ element.elements.gender['#id'] }}" name="{{ element.elements.gender['#name'] }}" class="select-menu">
+							{% set i = 0 %}
+							{% for key,value in element.elements.gender['#options'] %}
+								{% set i = i + 1 %}
+								{% if i > 1 %}
+									<option value="{{ key }}">{{ value }}</option>
+								{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="__date-of-birth">
+					<div class="__head">(*) {% trans %} Date of birth {% endtrans %}</div>
+					<div class="__input">
+						<input data-drupal-selector="edit-{{ element.elements.dob['#name'] }}" type="text" name="{{ element.elements.dob['#name'] }}" id="{{ element.elements.dob['#id'] }}" placeholder="01 /01 /2015">
+					</div>
+				</div>
+				<div class="__passport">
+					<div class="__head">(*) {% trans %} NRIC/Passport No {% endtrans %}.</div>
+					<div class="__input">
+						<input data-drupal-selector="edit-{{ element.elements.passport['#name'] }}" type="text" name="{{ element.elements.passport['#name'] }}" id="{{ element.elements.passport['#id'] }}" />
+					</div>
+				</div>
+				<div class="__telephone">
+					<div class="__head">{% trans %} Telephone No {% endtrans %}.</div>
+					<div class="__input">
+						<input data-drupal-selector="edit-{{ element.elements.telephone['#name'] }}" type="text" name="{{ element.elements.telephone['#name'] }}" id="{{ element.elements.telephone['#id'] }}" />
+					</div>
+				</div>
+				<div class="__mobile">
+					<div class="__head">(*) {% trans %} Mobile No {% endtrans %}.</div>
+					<div class="__input">
+						<input data-drupal-selector="edit-{{ element.elements.mobile['#name'] }}" type="text" name="{{ element.elements.mobile['#name'] }}" id="{{ element.elements.mobile['#id'] }}" />
+					</div>
+				</div>
+				<div class="__email section-block">
+					<div class="__head">(*) {% trans %} Email {% endtrans %}</div>
+					<div class="__input">
+						<input data-drupal-selector="edit-{{ element.elements.email['#name'] }}" type="email" name="{{ element.elements.email['#name'] }}" id="{{ element.elements.email['#id'] }}" />
+					</div>
+				</div>
+				<div class="__note mb-30">
+					<div class="__head">(*) {% trans %} Patient Current Medical Conditions / Symptoms / Diagnosis {% endtrans %}:</div>
+					<div class="__textarea">
+						<textarea data-drupal-selector="edit-{{ element.elements.message['#name'] }}" id="{{ element.elements.message['#id'] }}" name="{{ element.elements.message['#name'] }}" cols="60" rows="5"></textarea>
+					</div>
+				</div>
+				<div class="__doctor mb-15">
+					<div class="__head">{% trans %} Preferred Doctor {% endtrans %}</div>
+					<div class="__input">
+						<input data-drupal-selector="edit-{{ element.elements.doctor['#name'] }}" type="text" name="{{ element.elements.doctor['#name'] }}" id="{{ element.elements.doctor['#id'] }}" />
+					</div>
+				</div>
+				<div class="__remark">
+					<div class="__head">{% trans %} Remarks {% endtrans %}</div>
+					<div class="__textarea">
+						<textarea data-drupal-selector="edit-{{ element.elements.remarks['#name'] }}" id="{{ element.elements.remarks['#id'] }}" name="{{ element.elements.remarks['#name'] }}" cols="60" rows="5"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			{% set i = 0 %}
+			{% for key,value in element.elements.terms['#options'] %}
+				{% set i = i + 1 %}
+				<div class="checkbox mb-35">
+					<label>
+						<input data-drupal-selector="{{ element.elements.terms[key]['#id'] }}" id="{{ element.elements.terms[key]['#id'] }}" class="form-radio" type="radio" name="{{ element.elements.terms[key]['#name'] }}" value="{{ key }}" {% if i == 1 %} checked {% endif %} />
+						<span>
+							<i class="icon-check"></i>
+							{% if key == 'term1' %}
+								<span class="font-content">{{ element.elements.paragraph_4 }}</span>
+							{% else %}
+								<span class="font-content">{{ value }}</span>
+							{% endif %}
+						</span>
+					</label>
+				</div>
+			{% endfor %}
+		</div>
+		{{ element.form_build_id }}
+		{{ element.form_token }}
+		{{ element.form_id }}
+		<div class="container text-center">
+			{{ element.actions }}
+		</div>
+	</div>
+	{{ title_suffix }}
+</form>

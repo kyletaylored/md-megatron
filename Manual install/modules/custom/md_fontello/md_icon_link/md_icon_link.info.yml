@@ -1,0 +1,14 @@
+name: MD fontello icon Link
+type: module
+description: Provides an alternate widget for the link field that allows setting icons.
+# core: 8.x
+package: MegaDrupal
+dependencies:
+  - link
+  - md_fontello
+
+# Information added by Drupal.org packaging script on 2017-01-06
+version: '8.x-1.2'
+core: '8.x'
+project: 'md_fontello'
+datestamp: 1483678144

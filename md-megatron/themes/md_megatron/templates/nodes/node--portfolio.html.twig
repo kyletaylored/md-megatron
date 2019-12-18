@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-xs-12">
+		<nav class="pagination-2">
+			{% if prev_node_title %}
+				<a href="{{ path('entity.node.canonical', {'node': prev_node_nid}) }}" class="button-previous">
+					<i class="icon-left-open-big"></i><span>{% trans %} PREVIOUS {% endtrans %}</span>
+				</a>
+			{% endif %}
+			{% if next_node_title %}
+				<a href="{{ path('entity.node.canonical', {'node': next_node_nid}) }}" class="button-next">
+					<i class="icon-right-open-big"></i><span>{% trans %} NEXT {% endtrans %}</span>
+				</a>
+			{% endif %}
+			<div class="__back-to-portfolio">
+				<a href="#"><i class="icon fa fa-th"></i></a>
+			</div>
+		</nav>
+	</div>
+</div>
+
+{% if (node.field_portfolio_display.value == "style-1") %}
+	{% include directory ~ '/templates/nodes/portfolio/portfolio_detail_slider.html.twig' %}
+{% elseif (node.field_portfolio_display.value == "style-2") %}
+	{% include directory ~ '/templates/nodes/portfolio/portfolio_detail_images.html.twig' %}
+{% elseif (node.field_portfolio_display.value == "style-3") %}
+	{% include directory ~ '/templates/nodes/portfolio/portfolio_detail_grid.html.twig' %}
+{% elseif (node.field_portfolio_display.value == "style-4") %}
+	{% include directory ~ '/templates/nodes/portfolio/portfolio_detail_slider_aside.html.twig' %}
+{% elseif (node.field_portfolio_display.value == "style-5") %}
+	{% include directory ~ '/templates/nodes/portfolio/portfolio_detail_images_aside.html.twig' %}
+{% elseif (node.field_portfolio_display.value == "style-6") %}
+	{% include directory ~ '/templates/nodes/portfolio/portfolio_detail_grid_aside.html.twig' %}
+{% endif %}
+
+<div class="row border-top-lighter pt-55">
+	<div class="col-xs-12">
+		<nav class="pagination-2">
+	        {% if prev_node_title %}
+				<a href="{{ path('entity.node.canonical', {'node': prev_node_nid}) }}" class="button-previous">
+					<i class="icon-left-open-big"></i><span>{% trans %} PREVIOUS {% endtrans %}</span>
+				</a>
+			{% endif %}
+			{% if next_node_title %}
+				<a href="{{ path('entity.node.canonical', {'node': next_node_nid}) }}" class="button-next">
+					<i class="icon-right-open-big"></i><span>{% trans %} NEXT {% endtrans %}</span>
+				</a>
+			{% endif %}
+	      	<div class="__back-to-portfolio">
+				<a href="#"><i class="icon fa fa-th"></i></a>
+			</div>
+	    </nav>
+	</div>
+</div>

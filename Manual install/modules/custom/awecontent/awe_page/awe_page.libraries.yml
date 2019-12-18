@@ -1,0 +1,21 @@
+awe_page.iframe:
+  # Add css file
+  css:
+    component:
+      assets/css/awepage_build_fix.css: {}
+
+  dependencies:
+    - awe_builder/awe_builder.iframe
+
+awe_page.admin:
+  # Add css file
+  css:
+    component:
+      assets/css/awepage_admin.css: {}
+      assets/css/awepage_build_fix.css: {}
+  # Add js files
+  header: true
+  js:
+    assets/js/awepage_admin.js: {}
+  dependencies:
+    - awe_builder/awe_builder.admin

@@ -1,0 +1,27 @@
+/* Counter */
+.ac-counter {
+    text-align: center;
+}
+.counter-value{
+	font-size: 45px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "Montserrat", sans-serif;
+    margin: 10px 0;
+	letter-spacing: 0.04em;
+}
+.counter-title,
+.counter-description{
+    min-height: 0;
+    margin-bottom: 10px;
+}
+.ac-counter i{
+	font-size: 30px;
+}
+.counter-line {
+	margin: 25px auto;
+	display: block;
+    width: 0;
+    height: 2px;
+	border-left: 45px solid #00B863;
+}

@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-xs-12 pb-80">
+		<div class="portfolio-box-slider">
+			<div class="slider slide direction-nav">
+				{% for item in node.field_portfolio_gallery %}
+					<div class="block-portfolio-box-slider">
+						<div class="__image">
+							<img src="{{ file_url(item.getFieldCollectionItem().field_portfolio_gallery_image.entity.getFileUri()) }}" alt="portfolio image" class="img-responsive"/>
+						</div>
+					</div>
+				{% endfor %}
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="row portfolio-post">
+	<div class="col-lg-9 col-md-8 col-xs-12 portfolio-post-content section-block-small-p">
+		<h3 class="fz-3-l">
+			<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.entity.getTitle() }}</a>
+		</h3>
+		{{ node.body.value | raw }}
+	</div>
+	<div class="col-lg-3 col-md-4 col-xs-12 portfolio-post-info section-block">
+		<div class="__item __customer">
+			<h6>{% trans %} CLIENT {% endtrans %}</h6><span>{{ node.field_portfolio_client.value }}</span>
+		</div>
+		<div class="__item __category">
+			<h6>{% trans %} CLIENT'S SITE {% endtrans %}</h6><span>{{ node.field_portfolio_client_site.value }}</span>
+		</div>
+		<div class="__item __skill">
+			<h6>{% trans %} CATEGORIES {% endtrans %}</h6>
+			<div>
+				{{ cate | raw }}
+			</div>
+		</div>
+		<div class="__item __tag">
+			<h6>{% trans %} TAG {% endtrans %}</h6>
+			<div>
+				{{ tags | raw }}
+			</div>
+		</div>
+	</div>
+</div>

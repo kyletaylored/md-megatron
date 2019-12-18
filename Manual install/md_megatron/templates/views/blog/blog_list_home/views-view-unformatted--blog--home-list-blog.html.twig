@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set count = 1 %}
+{% if title %}
+  	<h3>{{ title }}</h3>
+{% endif %}	
+{% for row in rows %}
+	{% if count == 1 %}
+		<div class="col-md-6 col-xs-12 pt-10">
+			<div class="block-blog-post-2 post-large">
+				{{ row.content }}
+			</div>
+		</div>
+	{% else %}
+		{% if count == 2 %}
+			<div class="col-md-6 col-xs-12">
+				<div class="block-blog-post-2 post-side">
+					{{ row.content }}
+				</div>
+		{% elseif count == loop.length %}
+				<div class="block-blog-post-2 post-side">
+					{{ row.content }}
+				</div>
+			</div>
+		{% else %}
+			<div class="block-blog-post-2 post-side">
+				{{ row.content }}
+			</div>
+		{% endif %}
+	{% endif %}
+	{% set count = count + 1 %}
+{% endfor %}

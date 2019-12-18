@@ -1,0 +1,13 @@
+name: AweField
+type: module
+description: Defines AweBuilder field type
+
+package: AweContent
+dependencies:
+  - awe_builder
+
+version: '8.x-1.0'
+core: 8.x
+project: 'awe_field'
+project status url: 'http://megadrupal.com/fserver'
+datestamp: 1505278303

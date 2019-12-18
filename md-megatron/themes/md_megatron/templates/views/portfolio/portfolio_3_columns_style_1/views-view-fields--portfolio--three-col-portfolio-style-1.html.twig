@@ -1,0 +1,22 @@
+{% set cate = fields.field_portfolio_categories.content | replace({' ': ''}) %}
+{% set cate = cate | lower %}
+{% set cate = cate | replace({'//': ' '}) %}
+{% set cate = cate | replace({'&amp;': '-'}) %}
+{% set cate = cate | replace({'/': '-'}) %}
+
+<div class="grid-item col-md-4 col-sm-6 col-xs-12 {{ cate }}">
+	<div class="block-portfolio overlay-container basic zoom">
+		<img src="{{ fields.field_portfolio_thumbnail_1.content }}" alt="{{ fields.title.content }}" class="__image"/>
+		<div class="overlay bgc-dark-o-7">
+			<div class="cell-vertical-wrapper">
+				<div class="cell-middle">
+					<h4 class="__title"><a href="{{ fields.path.content }}">{{ fields.title.content }}</a></h4>
+					<div class="__caption font-serif-italic">{{ fields.body.content }}</div>
+				</div>
+			</div>
+			<a href="{{ fields.field_portfolio_thumbnail.content }}" class="__zoom zoom-button">
+				<i class="icon-resize-full"></i>
+			</a>
+		</div>
+	</div>
+</div>

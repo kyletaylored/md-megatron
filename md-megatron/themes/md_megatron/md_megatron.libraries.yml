@@ -1,0 +1,33 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/front/bootstrap.min.css: {}
+      css/front/animate.min.css: {}
+      css/front/font.css: {}
+      css/front/main.css: {}
+      css/front/custom.css: {}
+  js:
+    js/front/bootstrap.min.js: {}
+    js/front/wow.min.js: {}
+    js/front/isotope.pkgd.min.js: {}
+    js/front/imagesloaded.pkgd.min.js: {}
+    js/front/jquery.waypoints.js: {}
+    js/front/slick.min.js: {}
+    js/front/bootstrap-progressbar.min.js: {}
+    js/front/progressbar.min.js: {}
+    js/front/Chart.min.js: {}
+    js/front/jquery.chaffle.min.js: {}
+    js/front/jquery.fitvids.js: {}
+    js/front/jquery.countdown.min.js: {}
+    js/front/main.js: {}
+
+theme-settings:
+  version: 1.0
+  css:
+    theme:
+      css/admin/spectrum.css: {}
+      css/admin/style.css: {}
+  js:
+    js/admin/spectrum.js: {}
+    js/admin/script.js: {}

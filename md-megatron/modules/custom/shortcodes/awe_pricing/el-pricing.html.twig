@@ -1,0 +1,42 @@
+<div class="price-table-item text-center pricing-item">
+	<div class="__body">
+		{% for value in main['order_counter'] %}
+			{% if value == "order_header" %}
+				{% if main["header_enable"] %}
+					<div class="__title {% if main["is_feature"] %} default {% endif %}">
+						<h4 class="color-light mb-0 pricing-type">{{ main['type']|raw }}</h4>
+					</div>
+				{% endif %}
+			{% endif %}
+			{%  if value == "order_icon" %}
+				{% if main["icon_enable"] %}
+					<div class="service-box">
+						<i class="pricing-icon {% if icon["icon"] %} {{icon["icon"] }} {% else %} {{ 'icon-help-circled' }} {% endif %}"></i>
+						<h4 class="pricing-title">{{ main['title']|raw }}</h4>
+						<p class="font-serif-italic mb-0 pricing-subtitle">{{ main['subtitle']|raw }}</p>
+					</div>
+				{% endif %}
+			{% endif %}
+			{%  if value == "order_feature" %}
+				{% if main["features_enable"] %}
+					<ul class="text-center feature-list">
+						{{ main['features']|raw }}
+					</ul>
+				{% endif %}
+			{% endif %}
+			{%  if value == "order_price" %}
+				{% if main["price_enable"] %}
+					<h1 class="size-ll price {{ price["style"] }}">
+						<span class="price-value">{{ main['price_value']|raw }}</span>
+						<span class="price-duration">{{ main['price_duration']|raw }}</span>
+					</h1>
+				{% endif %}
+			{% endif %}
+			{%  if value == "order_footer" %}
+				{% if main["button_enable"] %}
+					<a href="{{ button['button_link'] }}" target="{{ button['button_target'] }}" class="{{ button['button_style'] }} ts-button">{{ button['button_text'] }}</a>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

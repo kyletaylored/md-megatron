@@ -1,0 +1,54 @@
+<div id="page-wrapper">
+	{% if page.header %}
+		<div class="page-content">
+			{{ page.header }}
+		</div>
+	{% endif %}
+	<div id="page-body" class="page-body">
+		{{ page.content }}
+	</div>
+	{% if page.footer %}
+		{{ page.footer }}
+	{% endif %}
+	<button id="back-to-top-btn"><i class="icon-up-open-big"></i></button>
+</div>
+<div id="modal-box" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal">&#215;</button>
+			{{ search_block }}
+		</div>
+	</div>
+</div>
+{% if logged_in == false %}
+<div id="modal-login" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal">&#215;</button>
+			<div class="login-popup text-center">
+				<header>
+					<h3 class="nmb">{% trans %}WELCOME BACK{% endtrans %}!</h3>
+					<p class="mb-40 fz-6-s font-serif">{% trans %}Login to your account below{% endtrans %}</p>
+				</header>
+				{{ login_form }}
+              	<div class="__separator"><span class="__text">{% trans %}OR{% endtrans %}</span></div>
+              	<a data-toggle="modal" data-target="#modal-register" class="btn no-border btn-secondary fullwidth register-btn">{% trans %}SIGN UP{% endtrans %}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-register" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal">&#215;</button>
+			<div class="text-center">
+				<header>
+					<h3 class="nmb">{% trans %}REGISTER{% endtrans %}!</h3>
+					<p class="mb-40 fz-6-s font-serif">{% trans %}Register now - Completely free{% endtrans %}</p>
+				</header>
+				{{ register_form }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}

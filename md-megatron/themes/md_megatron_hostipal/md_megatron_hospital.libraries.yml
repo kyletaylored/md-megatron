@@ -1,0 +1,19 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/main-hospital.css: {}
+      css/custom-hospital.css: {}
+  js:
+    js/jquery-ui.min.js: {}
+    js/jquery-migrate-3.0.0.js: {}
+
+theme-settings:
+  version: 1.0
+  css:
+    theme:
+      css/admin/spectrum.css: {}
+      css/admin/style.css: {}
+  js:
+    js/admin/spectrum.js: {}
+    js/admin/script.js: {}

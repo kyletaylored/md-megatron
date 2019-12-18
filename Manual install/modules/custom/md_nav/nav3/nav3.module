@@ -1,0 +1,13 @@
+<?php
+
+function nav3_theme($existing, $type, $theme, $path) {
+  return array('nav3_template' =>                  // this is the name of the template
+           array(
+            'variables' => array(
+                'logo' => '',
+                'menu' => null,
+                'sitename' => null
+            ),
+        )
+    );
+}

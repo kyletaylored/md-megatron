@@ -1,0 +1,103 @@
+<div class="post">
+	<div class="__header text-center">
+		{% if (node.field_news_style.value == "image") %}
+			<img src="{{ file_url(node.field_news_thumbnail.entity.getFileUri()) }}" alt="{{ node.title.entity.getTitle() }}" class="img-responsive"/>
+		{% elseif node.field_news_style.value == "multi" %}
+			{{ node.field_news_multimedia.value | raw }}
+		{% elseif node.field_news_style.value == "slider" %}
+			<div class="slider slide direction-nav">
+				{% for item in node.field_news_image %}
+					<img src="{{ file_url(item.entity.getFileUri()) }}" alt="{{ item.alt }}" />
+				{% endfor %}
+			</div>
+		{% else %}
+			<div class="__quote clearfix bgc-secondary">
+			  <div class="__qcontent">{{ node.body.summary }}</div>
+			  <div class="__qauthor pull-right">{{ node.field_news_quote_title.value }}</div>
+			</div>
+		{% endif %}
+	</div>
+	<div class="__main">
+		<div class="__title"><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.entity.getTitle() }}</a></div>
+		<div class="__meta">
+			<span>{% trans %} Posted {% endtrans %}:&nbsp;<span class="__value">{{ node.getCreatedTime|date(format='F d, Y') }} </span></span>
+			<span>{% trans %} By {% endtrans %}:&nbsp;<span class="__value">{{ node.get('uid').entity.getAccountName() }}</span></span>
+			<span>{% trans %} Categories {% endtrans %}:&nbsp;
+				<span class="__value">
+					{% set total = (node.field_news_categories.getvalue | length) %}
+					{% set count = 0 %}
+					{% for item in content.field_news_categories %}
+						{% if item['#title'] %}
+							{% set count = count + 1  %}
+							{% if (count < total) %}
+								<a href="{{ item['#url']}}">{{ item['#title']  }}</a>, 
+							{% else %}
+								<a href="{{ item['#url']}}">{{ item['#title']  }}</a>
+							{% endif %}	
+						{% endif %}
+					{% endfor %}
+				</span>
+			</span>
+			<span>{% trans %} Comment {% endtrans %}:&nbsp;<span class="__value">{% if node.comment.comment_count %} {{ node.comment.comment_count }} {% else %} 0 {% endif %}</span></span>
+		</div>
+		<div class="__content">
+			{{ node.body.value | raw }}
+		</div>
+	</div>
+</div>
+<div class="post-tags clearfix">
+	<div class="tags">
+		<span class="__title">{% trans %} TAGS {% endtrans %}:</span>
+		{% set total = (node.field_news_tags.getvalue | length) %}
+		{% set count = 0 %}
+		{% for item in content.field_news_tags %}
+			{% if item['#title'] %}
+				{% set count = count + 1  %}
+				{% if (count < total) %}
+					<a href="{{ item['#url']}}">{{ item['#title']  }}</a>, 
+				{% else %}
+					<a href="{{ item['#url']}}">{{ item['#title']  }}</a>
+				{% endif %}	
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+<div class="post-author clearfix">
+	<div class="__image">
+		{% if node.Owner.user_picture.entity.getFileUri() != "" %}
+			<img alt="" src="{{ file_url(node.Owner.user_picture.entity.getFileUri()) }}" class="img-responsive"/>
+		{% else %}
+			<img src="http://placehold.it/170x170" alt="" class="img-responsive"/>
+		{% endif %}
+	</div>
+	<div class="__about">
+		<h6 class="smb"><a href="{{ base_path }}user/{{ node.get('uid').entity.id() }}">{{ node.get('uid').entity.getAccountName() }}</a></h6>
+		<p>
+			{{ node.Owner.field_account_about.value }}
+		</p>
+		<ul class="social circle primary">
+			{% if node.Owner.field_account_facebook.value != "" %}
+				<li><a href="{{ node.Owner.field_account_facebook.value }}"><i class="icon icon-facebook-1"></i></a></li>
+			{% endif %}
+			{% if node.Owner.field_account_pinterest.value != "" %}
+				<li><a href="{{ node.Owner.field_account_pinterest.value }}"><i class="icon icon-pinterest"></i></a></li>
+			{% endif %}
+			{% if node.Owner.field_account_twitter.value != "" %}
+				<li><a href="{{ node.Owner.field_account_twitter.value }}"><i class="icon icon-twitter-1"></i></a></li>
+			{% endif %}
+			{% if node.Owner.field_account_linkedin.value != "" %}
+				<li><a href="{{ node.Owner.field_account_linkedin.value }}"><i class="icon icon-linkedin-1"></i></a></li>
+			{% endif %}
+			{% if node.Owner.field_account_googleplus.value != "" %}
+				<li><a href="{{ node.Owner.field_account_googleplus.value }}"><i class="icon icon-gplus"></i></a></li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+
+<div class="post-comment">
+	{% if node.comment.comment_count %}
+		<h4 class="smb block-heading bgc-gray-lighter">{% trans %}COMMENTS{% endtrans %} ({{ node.comment.comment_count }})</h4>
+	{% endif %}
+	{{ content.comment }}
+</div>

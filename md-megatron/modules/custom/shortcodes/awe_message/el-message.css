@@ -1,0 +1,88 @@
+.message > .close {
+	position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    margin: auto;
+    font-size: 8px;
+    line-height: 8px;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    font-weight: bold;
+}
+.message_title {
+	display: none;
+}
+.message.full {
+	border: 1px solid;
+    position: relative;
+}
+.message.full.notice {
+    border-color: #DDDDDD;
+    background-color: #EFF5F7;
+}
+.message.full.error {
+    border-color: #ffacb0;
+    background-color: #FFCDC6;
+}
+.message.full.warning {
+    border-color: #ffe1a0;
+    background-color: #FFF5B9;
+}
+.message.full.success {
+    border-color: #c0fa8d;
+    background-color: #BFFBA5;
+}
+.message.full.info {
+    border-color: #95f5ff;
+    background-color: #B9EDFF;
+}
+.message.full .message__content {
+    font-weight: 400;
+	font-size: 14px;
+}
+.message.full h6.message_title {
+    margin-bottom: 5px;
+	display: block;
+}
+.message.full .__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 8px;
+    line-height: 8px;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    font-weight: bold;
+}
+@media only screen and (min-width: 1230px) {
+	.message.full {
+    	padding-right: 90px;
+	}
+@media only screen and (min-width: 768px) {
+	.message.full {
+		padding: 16px 40px 12px 110px;
+	}
+	.message.full .__icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 110px;
+	}
+	.message.full .__icon i {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		font-size: 35px;
+		line-height: 35px;
+		display: inline-block;
+		height: 35px;
+		width: 35px;
+	}
+}

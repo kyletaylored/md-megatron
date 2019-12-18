@@ -1,0 +1,25 @@
+administer awe page:
+  title: 'Bypass AwePage access control'
+  description: 'View, edit and delete all pages regardless of permission restrictions.'
+  restrict access: true
+create awe page:
+  title: 'Create new page'
+  restrict access: true
+edit own awe page:
+  title: 'Edit own page'
+  restrict access: true
+edit any awe page:
+  title: 'Edit any page'
+  restrict access: true
+delete own awe page:
+  title: 'Delete own page'
+  restrict access: true
+delete any awepage:
+  title: 'Delete any page'
+  restrict access: true
+clone own awe page:
+  title: 'Clone own page'
+  restrict access: true
+clone any awepage:
+  title: 'Clone any page'
+  restrict access: true

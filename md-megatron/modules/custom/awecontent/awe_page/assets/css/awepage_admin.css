@@ -1,0 +1,92 @@
+.awe-button-create-page{margin-top:50px;}
+.awe-button-create-page a{border: 1px solid #ccc; padding: 8px 30px; font-size: 15px;}
+.awe-button-create-page a:hover{
+    text-decoration: none;background: green; color: #fff;
+}
+.form-item-small{max-width: 300px;}
+.title-input{margin-left: 80px;}
+.awe-box-path{margin-bottom: 60px;}
+.awe-left{float: left;}
+.awe-clear-both:after{clear: both;}
+.awe-menu-option{margin-left: 100px;}
+.awe-hidden{display: none;}
+.awe-btn-marin-top{margin-top: 50px;}
+#awe-preloader{font-size: 35px; color: red; text-align: center; margin-top: 350px;}
+body.awecontent-active, body.admin-menu.awecontent-active{
+    /* fix for default toolbar*/
+    padding-top: 0px !important;
+    /* fix for admin menu toolbar*/
+    margin-top: 0px !important;
+}
+.awecontent-wrapper{ background-image: none;}
+.js-ac-buildzone iframe{width: 100vw;}
+.ac_toolbar__group {margin: 20px 0}
+
+
+/* Narrow screens */
+.layout-region {
+  box-sizing:         border-box;
+}
+
+/* Wide screens */
+@media
+  screen and (min-width: 780px),
+  (orientation: landscape) and (min-device-height: 780px) {
+
+  .layout-region-node-main,
+  .layout-region-node-footer {
+    float: left; /* LTR */
+    width: 65%;
+    padding-right: 2em; /* LTR */
+    box-sizing: border-box;
+  }
+
+  [dir="rtl"] .layout-region-node-main,
+  [dir="rtl"] .layout-region-node-footer {
+    float: right;
+    padding-left: 2em;
+    padding-right: 0;
+  }
+
+  .layout-region-node-secondary {
+    float: right; /* LTR */
+    width: 35%;
+  }
+
+  [dir="rtl"] .layout-region-node-secondary {
+    float: left;
+  }
+
+  /* @todo File an issue to add a standard class to all text-like inputs */
+  .layout-region-node-secondary .form-autocomplete,
+  .layout-region-node-secondary .form-text,
+  .layout-region-node-secondary .form-tel,
+  .layout-region-node-secondary .form-email,
+  .layout-region-node-secondary .form-url,
+  .layout-region-node-secondary .form-search,
+  .layout-region-node-secondary .form-number,
+  .layout-region-node-secondary .form-color,
+  .layout-region-node-secondary textarea {
+    box-sizing:         border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/**
+ * The vertical toolbar mode gets triggered for narrow screens, which throws off
+ * the intent of media queries written for the viewport width. When the vertical
+ * toolbar is on, we need to suppress layout for the original media width + the
+ * toolbar width (240px). In this case, 240px + 780px.
+ */
+@media
+  screen and (max-width: 1020px) {
+
+  .toolbar-vertical.toolbar-tray-open .layout-region-node-main,
+  .toolbar-vertical.toolbar-tray-open .layout-region-node-footer,
+  .toolbar-vertical.toolbar-tray-open .layout-region-node-secondary {
+    float: none;
+    width: auto;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,45 @@
+{#
+/**
+ * @file md-icon.html.twig
+ * Default theme implementation to present an icon.
+ *
+ * @see template_preprocess_md_icon()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="nav-content-wrapper">
+	<div class="pull-left">
+		<div class="megatron inline">
+			<div class="cell-vertical-wrapper">
+				<div class="cell-middle">
+					<a href="{{ base_path }}">
+						{% if logo == "" %}
+							<div class="logo">
+								<svg viewBox="0 0 100 100">
+									<g>
+										<path d="M64.264,31.886v56.803l-14.319,8.259l-14.319-8.259v-74.3L14.157,26.771v41.271l7.156,4.128V30.905   l13.467-7.768v8.26l-6.311,3.64V84.56L7,72.178v-49.54L42.781,2v82.553l7.162,4.132l7.163-4.132V27.758L64.264,31.886z    M43.626,26.294l6.317-3.644L71.42,35.038V84.56l21.469-12.382v-49.54L57.106,2v15.546l7.157,4.128v-7.285l21.469,12.382v41.271   l-7.156,4.128V30.905L49.943,14.391l-6.317,3.644V26.294z"/>
+									</g>
+								</svg>
+							</div>
+							<div class="brand">{{ sitename }}</div>
+						{% else %}
+							<img src="{{ file_url(logo) }}" alt="" />
+						{% endif %}
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pull-right">
+		<nav class="os-menu main-menu text-center">
+			{{ menu }}
+		</nav>
+		<div class="nav-function nav-item">
+			<div class="__search">
+				<a data-toggle="modal" data-target="#modal-box" class="icon-search-icon"></a>
+			</div>
+			<div class="__offcanvas-button"><a href="#" class="offcanvas-nav-toggle icon-menu27"></a></div>
+		</div>
+	</div>
+</div>
